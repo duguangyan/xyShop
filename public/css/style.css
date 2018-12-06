@@ -1,0 +1,653 @@
+/*-- 公共部分 start--*/
+body{
+    background-color: #e6e4e4;
+}
+.w1200{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.header{
+    height: 46px;
+    width: 100%;
+    line-height: 46px;
+}
+.footer .w1200{
+    border-bottom: 2px solid #d2d1d1;
+}
+.footer ol li{
+    float: left;
+    width: 20%;
+    height: 108px;
+    line-height: 108px;
+    text-align: center;
+    font-size: 28px;
+}
+.footer ol li img{
+    position: relative;
+    top: 25px;
+    margin-right: 20px;
+}
+.footer-li{
+    width: 16.5% !important;
+}
+.footer-code{
+    position: relative;
+    left: 35px;
+    text-align: center;
+    font-size: 16px;
+}
+.footer-code div img{
+    position: relative;
+    top: 10px;
+    width: 16px;
+    margin-right: 10px;
+}
+.footer ul li h3{
+    font-size: 20px;
+}
+.footer ul{
+    margin: 10px 0;
+}
+.footer ul li{
+    border-right: 1px solid #d2d1d1;
+    cursor: pointer;
+}
+.footer ul li:last-child{
+    border-right: none;
+}
+.footer ul li div{
+    font-size: 18px;
+}
+.footer ul li div,.footer ul li h3{
+    line-height: 40px;
+    text-align: center;
+}
+.footer-code>img{
+    width: 100px;
+}
+.online-service{
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100px;
+    margin: 10px auto;
+
+}
+.footer-bottom{
+    font-size: 14px;
+    text-align: center;
+    margin: 60px 0 10px 0;
+}
+.content{
+    background-color: #fff;
+}
+.search{
+    height: 200px;
+}
+.search img{
+    margin-top: 54px;
+}
+.search input{
+    height: 50px;
+    width: 480px;
+    padding-left: 20px;
+    border: 1px solid #bbbbbb;
+    margin-top: 60px;
+    margin-left: 110px;
+}
+.search span{
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    width: 80px;
+    text-align: center;
+    border: 1px solid #bbbbbb;
+    border-left: none ;
+    position: relative;
+    left: -4px;
+    margin-top: 60px;
+
+}
+.search .hot{
+    position: relative;
+    margin-left: 312px;
+    color: #bbb;
+    font-size: 14px;
+}
+/*-- 公共部分 end--*/
+/*-- 首页部分 start--*/
+.index-nav ul>li{
+    float: left;
+    text-align: center;
+    border-right: 1px solid #eee;
+    font-size: 24px;
+    padding: 2px 12px;
+}
+.index-nav ul>li:nth-child(2){
+    margin-left: 20px;
+}
+.index-nav ul>li:first-child{
+    background-color: #000;
+    color: #fff;
+}
+.index-nav ul>li:first-child img{
+    position: relative;
+    top: 6px;
+    margin-right: 4px;
+}
+.index-nav ul>li:last-child{
+    border-right: none;
+}
+.index-content-bg{
+    height: 500px;
+}
+.index-content-bg img{
+    height: 100%;
+    width: 100%;
+}
+.index-nav ol>li:hover{
+    background-color: #fff;
+    color: #000;
+}
+.index-nav ol{
+    position: absolute;
+    z-index: 99999;
+}
+.index-nav ol>li{
+    cursor: pointer;
+    height: 50px;
+    line-height: 50px;
+    width: 206px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    z-index: 99999;
+}
+.index-nav-right{
+    right: 0;
+    height: 499px;
+    border-bottom: 1px solid #eee;
+    position: absolute;
+    float: right;
+    width: 300px;
+    background-color: #fff;
+    z-index: 99999;
+}
+.index-right-top{
+    text-align: center;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+}
+.index-right-top img{
+    margin-top: 20px;
+}
+.index-right-top p{
+    padding: 10px 0;
+}
+.index-right-join{
+    font-size: 16px;
+    text-align: left;
+    padding-left: 60px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #e3e3e3;
+    cursor: pointer;
+}
+.index-right-list{
+    padding-top: 20px;
+}
+.index-right-list div{
+    width: 50%;
+    float: left;
+    text-align: center;
+    background-color: #fff;
+    position: relative;
+}
+.index-right-list div img{
+    margin-top: 15px;
+}
+.index-right-list div p{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.index-right-list div:nth-child(1):after,.index-right-list div:nth-child(4):after{
+    content: "";
+    display: block;
+    width: 1px;
+    height: 80%;
+    background-color: #eee;
+    position: absolute;
+    right: 0;
+    top: 5%;
+}
+.index-line{
+    width: 100%;
+    height: 1px;
+    background-color: #eee;
+    top: 100px;
+    left: 0;
+}
+.index-cart{
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+.index-cart ul li{
+    float: left;
+    width: 12.5%;
+    text-align: center;
+    cursor: pointer;
+}
+.index-order ul li{
+    width: 25%;
+    float: left;
+    text-align: center;
+}
+.index-order ul li .fl{
+    position: relative;
+    left: 50px;
+    text-align: left;
+    margin: 20px 0;
+}
+.index-order ul li .fr{
+    position: relative;
+    right: 50px;
+    text-align: right;
+    margin: 20px 0;
+}
+.index-order ul{
+    border: 1px solid #eee;
+    padding: 24px 0;
+}
+.index-order-title{
+    margin: 20px 0;
+}
+.index-newproduct-warp{
+    border: 1px solid #eee;
+    padding: 20px 0;
+}
+.index-newproduct-warp .fl{
+    padding-left: 20px;
+}
+.index-newproduct-warp .fr{
+    width: 700px;
+}
+.index-newproduct-warp .fr ul li{
+    float: left;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+.index-office{
+    padding-bottom: 100px;
+}
+.index-office-left{
+    width: 950px;
+    float: left;
+}
+.index-office-right{
+    width: 250px;
+}
+.index-office-left ul li{
+    float: left;
+    width: 470px;
+    height: 350px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+.index-office-left ul li img{
+    width: 100%;
+}
+.index-office-right{
+    width: 250px;
+    height: 700px;
+    float: left;
+}
+.index-office-right img{
+    width: 100%;
+}
+.swiper-container {
+    width: 100%;
+    height: 500px;
+}
+/*-- 首页部分 end--*/
+
+/*-- 登录部分 start--*/
+.login{
+    background-color: #fff;
+}
+.login-logo{
+    padding: 50px 0;
+}
+.login-bg{
+    width: 100%;
+    height: 600px;
+    position: absolute;
+    top: 0;
+}
+.login-content{
+    padding-bottom: 100px;
+    position: relative;
+    height: 600px;
+}
+.login-bg img{
+    width: 100%;
+    height: 100%;
+}
+.login-message{
+    height: 600px;
+
+    position: relative;
+    z-index: 99999;
+}
+.login-right{
+    width: 500px;
+    height: 600px;
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+}
+.login-title{
+    margin-top: 60px;
+    text-align: center;
+}
+.login-title span{
+    padding: 0 20px;
+    font-size: 28px;
+}
+.login-title span:first-child{
+    border-right: 1px solid #999;
+}
+.login-input{
+    margin-top: 44px;
+}
+.login-input-name, .login-input-pwd{
+    width: 300px;
+    height: 50px;
+    border: 1px solid #e2e2e2;
+    margin-left: 100px;
+    margin-bottom: 20px;
+}
+.login-input-name img , .login-input-pwd img{
+    position: relative;
+    left: 8px;
+    top: 6px;
+}
+.login-input-pwd img{
+    left: 15px;
+}
+.login-input-name input , .login-input-pwd input{
+    height: 50px;
+    border-left: 1px solid #e2e2e2;
+    line-height: 50px;
+    padding-left: 20px;
+    margin-left: 20px;
+    font-size: 16px;
+}
+.login-input-pwd input{
+    margin-left: 30px;
+}
+.login-eay{
+    position: absolute;
+    right: 20px;
+    top: 0;
+}
+.login-eay img{
+    position: relative;
+    top: 16px;
+    margin-right: 10px;
+}
+.login-eay img:last-child{
+    display: none;
+}
+.login-in{
+    text-align: center;
+    width: 300px;
+    margin-left: 100px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #fc4c02;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+.login-forget{
+    width: 300px;
+    margin-left: 100px;
+    text-align: right;
+    font-size: 14px;
+    margin-top: 10px;
+}
+.login-other{
+    margin-top: 120px;
+    position: relative;
+}
+.login-other:after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #e2e2e2;
+    position: absolute;
+    top: 10px;
+}
+.login-other:before{
+    content: "";
+    display: block;
+    width: 110px;
+    height: 20px;
+    position: absolute;
+    left: 194px;
+    background-color: #fff;
+    z-index: 99;
+}
+.login-other span{
+    text-align: center;
+    font-size: 14px;
+    display: block;
+    position: relative;
+    z-index: 99999;
+}
+.login-other-btn ul li{
+    float: left;
+    width: 25%;
+    text-align: center;
+    padding-top: 40px;
+    cursor: pointer;
+}
+.login-other-btn ul li:nth-child(odd){
+    padding-top: 36px !important;
+}
+.login-input-code, .login-input-phone{
+    width: 300px;
+    height: 50px;
+    border: 1px solid #e2e2e2;
+    margin-left: 100px;
+    margin-bottom: 20px;
+}
+.login-input-code input, .login-input-phone input{
+    width: 160px;
+    height: 50px;
+    border-right: 1px solid #e2e2e2;
+    line-height: 50px;
+    padding-left: 20px;
+    font-size: 16px;
+}
+.login-get-phone{
+    color: #666;
+    display: inline-block;
+    width: 110px;
+    text-align: center;
+}
+.login-agreen{
+    margin: 30px 0 0 100px;
+}
+.login-agreen img{
+    cursor: pointer;
+}
+.login-agreen span{
+    margin-left: 10px;
+}
+.register-finsh{
+    height: 564px;
+    border-top: 1px solid #e2e2e2;
+}
+.register-finsh-span1,.register-finsh-span2,.register-finsh-span3{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 64px;
+    background-color: #000;
+    color: #fff;
+    font-size: 34px;
+    display: inline-block;
+}
+.register-finsh-span3{
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    background-color: #ff0000;
+}
+.login-arrow-right img{
+    position: relative;
+    top: 34px;
+    margin-right: 20px;
+}
+.register-finsh-text{
+    font-size: 28px;
+    position: relative;
+    margin: 20px;
+}
+.register-finsh-top{
+    margin-top: 100px;
+    text-align: center;
+}
+.register-finsh-text2{
+    text-align: center;
+    color: #ff0000;
+    font-size: 28px;
+    margin: 50px 0;
+}
+.register-finsh-footer{
+    text-align: center;
+}
+.register-finsh-footer .register-finsh-number{
+    height: 140px;
+    line-height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    background-color: #ff0000;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    font-size: 28px;
+}
+.register-finsh-footer a{
+    font-size: 28px;
+    margin-left: 30px;
+}
+/*-- 登录部分 end--*/
+/*-- 商品部分 start--*/
+.goods-left{
+    width: 200px;
+    float: left;
+    font-size: 18px;
+    text-align: center;
+    color: #333;
+    background-color: #f3f3f3;
+}
+.goods-left ul li{
+    height: 50px;
+    line-height: 50px;
+    cursor: pointer;
+}
+.goods-left ul li:hover{
+    background-color: #333;
+    color: #fff;
+}
+.goods-right{
+    width: 980px;
+    float: left;
+    margin-left: 20px;
+}
+.goods-filter{
+    background-color: #000;
+    margin-bottom: 10px;
+    height: 40px;
+    line-height: 40px;
+}
+.goods-filter-1{
+    font-size: 20px;
+    color: #fff;
+    margin-left: 20px;
+}
+.goods-filter-2{
+    font-size: 18px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    margin-left: 20px;
+    background-color: #fff;
+}
+.goods-filter-active{
+    color: #ff0000;
+}
+.goods-filter img{
+    position: relative;
+    top: 6px;
+    left: 2px;
+    margin: 6px;
+}
+.goods-filter-2 i{
+    display: inline-block;
+    width: 20px;
+    height: 18px;
+    position: relative;
+    top: 2px;
+    left: 2px;
+    background: url("/images/login-arrow-top.png") no-repeat center center;
+}
+.goods-filter-active i{
+    background: url("/images/login-arrow-top-red.png") no-repeat center center;
+}
+.goods-list ul li{
+    float: left;
+    margin-right: 20px;
+    position: relative;
+    margin-bottom: 20px;
+    cursor: pointer;
+
+}
+.goods-list ul li .goods-list-warp{
+    -webkit-transition: all .2s linear;transition: all .2s linear
+}
+.goods-list ul li .goods-list-warp:hover{-webkit-box-shadow: 0 15px 30px rgba(0,0,0,0.1);box-shadow: 0 15px 30px rgba(0,0,0,0.1);-webkit-transform: translate3d(0, -2px, 0);transform: translate3d(0, -2px, 0)}
+
+.goods-list ul{
+    width: 1000px;
+}
+.goods-list ul li .goods-carshop{
+    position: absolute;
+    bottom: 4px;
+    right: 10px;
+}
+.goods-list-warp p{
+    background-color: #eee;
+    margin-top: 0px !important;
+    padding: 4px 0;
+
+}
+.goods-list ul li p{
+    font-size: 18px;
+    padding-left: 24px;
+    margin-top: 10px;
+}
+.goods-pagination{
+    text-align: center;
+    margin: 100px 0;
+}
+.goods-pagination span{
+    margin:0 20px;
+}
+/*-- 商品部分 end--*/
+

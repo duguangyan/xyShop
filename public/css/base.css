@@ -1,0 +1,61 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote,dl, dt, dd, ul, ol, li,pre,fieldset,
+button, input, textarea,iframe,th, td,img{margin: 0;padding: 0;border: 0 none;font-family: "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;font-size: 14px;}
+img{vertical-align: top;border: 0 none;}
+html,body{min-width:1240px;}
+.cf{*zoom:1;}
+.cf:after, .cf:before{content:".";height:0;clear:both;visibility:hidden;display:block;}
+.fl{float: left;}
+.fr{float: right;}
+table{ border-collapse:collapse; border-spacing:0; }
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{color: #999;}
+input:-moz-placeholder, textarea:-moz-placeholder {color:#999;}
+input::-moz-placeholder, textarea::-moz-placeholder {color:#999;}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {color:#999;}
+button,input,optgroup,select,textarea {outline: 0;box-sizing: content-box}
+address, cite, dfn, em, var,i{ font-style: normal; }
+small { font-size: 12px; }
+ul, ol,li{ list-style: none; }
+abbr[title], acronym[title] {border-bottom: 1px dotted;cursor: help;}
+q:before, q:after { content: ''; }
+legend { color: #000; }
+fieldset, img { border: none; vertical-align:top}
+button, input, select, textarea {font-size: 100%;}
+table {border-collapse: collapse;border-spacing: 0;}
+hr {border: none;height: 1px;}
+html { overflow-y: scroll; }
+a{text-decoration:none;color: #333333}
+a:link{text-decoration:none;outline:none;}
+a:visited{text-decoration:none;outline:none;}
+a:hover{text-decoration:none;color:#fc4c02;}
+a:active{text-decoration:none;outline:none;}
+a:focus{outline:none;}
+.cf:after,.cf:before{ content: "";display: table;}
+.cf:after{ clear:both;}
+.cf{zoom:1;}
+.fl{float: left;}
+.fr{float: right;}
+.fs18{font-size: 18px}
+.fs24{font-size: 24px}
+.fs28{font-size: 28px}
+.c-f2{
+    background-color: #e6e4e4;
+}
+
+.bg-000{
+    background-color: #000;
+}
+.bg-fff{
+    background-color: #fff;
+}
+.c-fff{
+    color: #fff;
+}
+.c-red{
+    color: #fc4c02;
+}
+.po-re{
+    position: relative;
+}
+.po-ab{
+    position: absolute;
+}

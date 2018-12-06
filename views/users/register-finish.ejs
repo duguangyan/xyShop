@@ -1,0 +1,53 @@
+<%include ../layouts/header.ejs %>
+<div class="login">
+    <div class="w1200">
+        <div class="login-logo">
+            <img src="/images/logo.png">
+        </div>
+    </div>
+    <div class="register-finsh">
+        <div class="w1200">
+            <div class="register-finsh-top">
+                <span class="register-finsh-span1">1</span> <span class="register-finsh-text">填写账号其他信息</span>
+                <span class="login-arrow-right"><img src="/images/login-arrow-right.png"></span>
+                <span class="register-finsh-span2">2</span> <span class="register-finsh-text">补全账号其他信息</span>
+                <span class="login-arrow-right"><img src="/images/login-arrow-right.png"></span>
+                <span class="register-finsh-span3">3</span><span class="register-finsh-text">完成</span>
+            </div>
+        </div>
+        <div class="register-finsh-text2">
+            <span>恭喜！注册完成！</span>
+        </div>
+        <div class="register-finsh-footer">
+            <span class="register-finsh-number"><span>5</span>s后</span> <a href="/">返回首页</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/js/jq.js"></script>
+<script>
+    /**
+     *
+     * 注册完成页面
+     * register 对象
+     * timerNumber 计数器
+     * timer 计时器
+     * @type {{}}
+     */
+    $(function () {
+        var register = {};
+        register.timerNumber = 5;
+        register.timer=null;
+        $(".register-finsh-number").find("span").html(register.timerNumber);
+        register.timer = setInterval(function () {
+            if(register.timerNumber>0){
+                register.timerNumber--
+                $(".register-finsh-number").find("span").html(register.timerNumber);
+            }else{
+                clearInterval(register.timer)
+                window.location.href="/";
+            }
+        },1000)
+    })
+
+</script>
+<%include ../layouts/footer.ejs %>
