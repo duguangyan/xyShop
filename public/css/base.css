@@ -59,3 +59,22 @@ a:focus{outline:none;}
 .po-ab{
     position: absolute;
 }
+.star-1{
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: url(/images/deatil-star-1.png) no-repeat center center;
+}
+
+.star-2{
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: url(/images/deatil-star-2.png) no-repeat center center;
+}
+.check-box{
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #e2e2e2;
+}
