@@ -26,7 +26,7 @@ html { overflow-y: scroll; }
 a{text-decoration:none;color: #333333}
 a:link{text-decoration:none;outline:none;}
 a:visited{text-decoration:none;outline:none;}
-a:hover{text-decoration:none;color:#fc4c02;}
+a:hover{text-decoration:none;color:#da251d;}
 a:active{text-decoration:none;outline:none;}
 a:focus{outline:none;}
 .cf:after,.cf:before{ content: "";display: table;}
@@ -47,11 +47,14 @@ a:focus{outline:none;}
 .bg-fff{
     background-color: #fff;
 }
+.bg-red{
+    background-color: #da251d;
+}
 .c-fff{
     color: #fff;
 }
 .c-red{
-    color: #fc4c02;
+    color: #da251d;
 }
 .po-re{
     position: relative;
@@ -77,4 +80,6 @@ a:focus{outline:none;}
     width: 28px;
     height: 28px;
     border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    cursor: pointer;
 }

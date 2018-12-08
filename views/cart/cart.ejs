@@ -1,0 +1,119 @@
+<%include ../layouts/header.ejs %>
+<div class="content">
+    <%include ../layouts/search.ejs %>
+    <div class="index-content">
+        <div class="index-nav w1200 po-re">
+            <ul class="cf">
+                <li>
+                    <img src="/images/index_content_1.png">
+                    全部商品分类
+                </li>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">企业服务</a></li>
+                <li><a href="#">办公装横</a></li>
+                <li><a href="#">物流服务</a></li>
+                <li><a href="#">设备共享</a></li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <%include ../layouts/classify.ejs %>
+        <div class="cart w1200">
+            <table>
+                <thead>
+                    <tr>
+                        <th><i class="check-box"></i>全选</th>
+                        <th>商品信息</th>
+                        <th>单价</th>
+                        <th>数量</th>
+                        <th>优惠信息</th>
+                        <th>金额</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td><i class="check-box"></i></td>
+                        <td class="cf">
+                            <div class="fl">
+                                <img src="http://placehold.it/70x70">
+                            </div>
+                            <div class="fl cart-carry">
+                                <p>桶装水</p>
+                                <p>规格 : <span>百岁山</span> <span>60 桶</span></p>
+                            </div>
+                        </td>
+                        <td>¥ 12</td>
+                        <td>60</td>
+                        <td>开张大促，60桶送10</td>
+                        <td>
+                            <p class="cart-text-del"><span>￥720</span></p>
+                            <p class="fs18">￥650</p>
+                        </td>
+                        <td><img src="/images/cart-del.png"></td>
+                    </tr>
+                    <tr>
+                        <td><i class="check-box"></i></td>
+                        <td class="cf">
+                            <div class="fl">
+                                <img src="http://placehold.it/70x70">
+                            </div>
+                            <div class="fl cart-carry">
+                                <p>桶装水</p>
+                                <p>规格 : <span>百岁山</span> <span>60 桶</span></p>
+                            </div>
+                        </td>
+                        <td>¥ 12</td>
+                        <td>60</td>
+                        <td>开张大促，60桶送10</td>
+                        <td>
+                            <p class="cart-text-del"><span>￥720</span></p>
+                            <p class="fs18">￥650</p>
+                        </td>
+                        <td><img src="/images/cart-del.png"></td>
+                    </tr>
+                    <tr>
+                        <td><i class="check-box"></i></td>
+                        <td class="cf">
+                            <div class="fl">
+                                <img src="http://placehold.it/70x70">
+                            </div>
+                            <div class="fl cart-carry">
+                                <p>桶装水</p>
+                                <p>规格 : <span>百岁山</span> <span>60 桶</span></p>
+                            </div>
+                        </td>
+                        <td>¥ 12</td>
+                        <td>60</td>
+                        <td>开张大促，60桶送10</td>
+                        <td>
+                            <p class="cart-text-del"><span>￥720</span></p>
+                            <p class="fs18">￥650</p>
+                        </td>
+                        <td><img src="/images/cart-del.png"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="cart-footer w1200 cf">
+            <i class="check-box"></i>
+            <span>全选</span>
+            <span class="cart-todel">删除选中商品</span>
+            <div class="fr cart-topay">去结算</div>
+            <div class="fr">合计: <span class="c-red">￥5000</span></div>
+        </div>
+    </div>
+
+    <div class="cart-nodata w1200" style="display: none">
+        <img src="/images/cart-nodata.png">
+        <p class="c-red">购物车暂无商品</p>
+        <div class="cart-goblack"><a href="/">继续逛逛</a></div>
+    </div>
+    <div style="height: 20px; background-color: #fff"></div>
+</div>
+<script>
+
+
+</script>
+<%include ../layouts/footer.ejs %>
