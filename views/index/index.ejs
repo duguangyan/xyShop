@@ -3,30 +3,8 @@
         <%include ../layouts/search.ejs %>
         <div class="index-content">
             <div class="index-nav w1200 po-re">
-                <ul class="cf">
-                    <li>
-                        <img src="/images/index_content_1.png">
-                        全部商品分类
-                    </li>
-                    <li><a href="#">首页</a></li>
-                    <li><a href="#">企业服务</a></li>
-                    <li><a href="#">办公装横</a></li>
-                    <li><a href="#">物流服务</a></li>
-                    <li><a href="#">设备共享</a></li>
-                </ul>
-                <ol class="po-ab">
-                    <li>名片传单本册</li>
-                    <li>名片传单本册</li>
-                    <li>名片传单本册</li>
-                    <li>名片传单本册</li>
-                    <li>名片传单本册</li>
-                    <li>名片传单本册</li>
-                    <li>名片传单本册</li>
-                    <li>名片传单本册</li>
-                    <li>名片传单本册</li>
-                </ol>
                 <div class="index-nav-right">
-                    <div class="index-right-top">
+                    <div class="index-right-top" style="display: none">
                         <img src="/images/logo-min.png">
                         <p>欢迎光临信印一站式服务平台</p>
                         <p class="index-login">
@@ -34,6 +12,19 @@
                             <span><a href="/users/register">注册</a></span>
                         </p>
                     </div>
+                    <div class="index-float">
+                        <div class="index-right-join">
+                            快捷入口
+                        </div>
+                        <div class="index-right-list po-re cf">
+                            <a href="/center"><div><img src="/images/index_content_2.png"><p>我的订单</p></div></a>
+                            <a href="/center"><div><img src="/images/index_content_3.png"><p>充值中心</p></div></a>
+                            <span class="index-line po-ab"></span>
+                            <a href="/center"><div><img src="/images/index_content_4.png"><p>我的优惠券</p></div></a>
+                            <a href="/center"><div><img src="/images/index_content_5.png"><p>我的收藏</p></div></a>
+                        </div>
+                    </div>
+
                     <div class="index-nav-product">
                         <img src="http://placehold.it/300x140" alt="">
                     </div>
@@ -130,25 +121,40 @@
             <p class="fs28 index-order-title">新品上市</p>
             <div class="index-newproduct-warp cf">
                 <div class="fl">
-                    <img src="http://placehold.it/240x700">
-                </div>
-                <div class="fl">
-                    <div>
-                        <img src="http://placehold.it/480x350">
-                    </div>
-                    <div>
-                        <img src="http://placehold.it/240x350">
-                        <img src="http://placehold.it/240x350">
+                    <div class="box-240-650">
+                        <img src="http://placehold.it/240x650">
                     </div>
                 </div>
                 <div class="fl">
-                    <div>
-                        <img src="http://placehold.it/240x350">
-                        <img src="http://placehold.it/240x350">
+                    <div class="mgl-5 box-474-320">
+                        <img src="http://placehold.it/474x320">
                     </div>
-                    <div>
-                        <img src="http://placehold.it/240x350">
-                        <img src="http://placehold.it/240x350">
+                    <div class="mgl-5">
+                        <div class="fl box-235-320 mgt-10">
+                            <img src="http://placehold.it/235x320">
+                        </div>
+                        <div class="fl box-235-320 mgt-10 mgl-4">
+                            <img src="http://placehold.it/235x320">
+                        </div>
+                    </div>
+                </div>
+                <div class="fl">
+
+                    <div class="fl">
+                        <div class="box-235-320 mgl-5">
+                            <img src="http://placehold.it/235x320">
+                        </div>
+                        <div class="box-235-320 mgl-5 mgt-10">
+                            <img src="http://placehold.it/235x320">
+                        </div>
+                    </div>
+                    <div class="fl">
+                        <div class="box-235-320 mgl-5">
+                            <img src="http://placehold.it/235x320">
+                        </div>
+                        <div class="box-235-320 mgl-5 mgt-10">
+                            <img src="http://placehold.it/235x320">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -158,12 +164,21 @@
             <p class="fs28 index-order-title">热销产品</p>
             <div class="index-newproduct-warp cf">
                 <div class="fl">
-                    <img src="http://placehold.it/480x340">
+                    <div class="box-474-340">
+                        <img src="http://placehold.it/474x340">
+                    </div>
+
                 </div>
                 <div class="fl">
-                    <img src="http://placehold.it/240x340">
-                    <img src="http://placehold.it/240x340">
-                    <img src="http://placehold.it/240x340">
+                    <div class="fl box-235-340 mgl-5">
+                        <img src="http://placehold.it/235x340">
+                    </div>
+                    <div class="fl box-235-340 mgl-5">
+                        <img src="http://placehold.it/235x340">
+                    </div>
+                    <div class="fl box-235-340 mgl-5">
+                        <img src="http://placehold.it/235x340">
+                    </div>
                 </div>
             </div>
         </div>
@@ -173,43 +188,42 @@
             <p class="fs28 index-order-title">办公用品</p>
             <div class="index-newproduct-warp cf">
                 <div class="fl">
-                    <div>
-                        <img src="http://placehold.it/480x320">
+                    <div class="box-474-320">
+                        <img src="http://placehold.it/474x320">
+                    </div>
+                    <div class="mgt-10">
+                        <div class="box-235-320 fl">
+                            <img src="http://placehold.it/235x320">
+                        </div>
+                        <div class="box-235-320 mgl-4 fl">
+                            <img src="http://placehold.it/235x320">
+                        </div>
+                    </div>
+                </div>
+                <div class="fl mgl-5">
+                    <div class="cf">
+                        <div class="box-235-320 fl">
+                            <img src="http://placehold.it/235x320">
+                        </div>
+                        <div class="box-235-320 fl mgl-5">
+                            <img src="http://placehold.it/235x320">
+                        </div>
                     </div>
                     <div>
-                        <img src="http://placehold.it/240x320">
-                        <img src="http://placehold.it/240x320">
+                        <div class="box-474-320 mgt-10">
+                            <img src="http://placehold.it/474x320">
+                        </div>
                     </div>
                 </div>
                 <div class="fl">
-                    <div>
-                        <img src="http://placehold.it/240x320">
-                        <img src="http://placehold.it/240x320">
-                    </div>
-                    <div>
-                        <img src="http://placehold.it/480x320">
-                    </div>
-                </div>
-                <div class="fl">
-                    <div>
-                        <img src="http://placehold.it/240x640">
+                    <div class="box-240-650 mgl-5">
+                        <img src="http://placehold.it/240x650">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="index-float">
-        <div class="index-right-join">
-            快捷入口
-        </div>
-        <div class="index-right-list po-re cf">
-            <div><img src="/images/index_content_2.png"><p>我的订单</p></div>
-            <div><img src="/images/index_content_3.png"><p>充值中心</p></div>
-            <span class="index-line po-ab"></span>
-            <div><img src="/images/index_content_4.png"><p>我的优惠券</p></div>
-            <div><img src="/images/index_content_5.png"><p>我的收藏</p></div>
-        </div>
-    </div>
+
 <script>
     /**
      * 首页轮播图

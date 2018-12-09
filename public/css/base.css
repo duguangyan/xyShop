@@ -34,7 +34,11 @@ a:focus{outline:none;}
 .cf{zoom:1;}
 .fl{float: left;}
 .fr{float: right;}
+.fs12{font-size: 12px}
+.fs14{font-size: 14px}
+.fs16{font-size: 16px}
 .fs18{font-size: 18px}
+.fs20{font-size: 20px}
 .fs24{font-size: 24px}
 .fs28{font-size: 28px}
 .c-f2{
@@ -53,14 +57,47 @@ a:focus{outline:none;}
 .c-fff{
     color: #fff;
 }
+.c-999{
+    color: #999;
+}
+.c-666{
+    color: #666;
+}
+.c-333{
+     color: #333;
+}
+.c-000{
+    color: #333;
+}
 .c-red{
     color: #da251d;
+}
+.c-yellow{
+    color: #ff7800;
 }
 .po-re{
     position: relative;
 }
 .po-ab{
     position: absolute;
+}
+.mgl-5{
+    margin-left: 5px;
+}
+.mgl-4{
+    margin-left: 4px;
+}
+.mgl-10{
+    margin-left: 10px;
+}
+.mgl-20{
+    margin-left: 20px;
+}
+.mgt-10{
+    margin-top: 10px;
+}
+.mgt-5{
+    margin-top: 5px;
 }
 .star-1{
     display: inline-block;
@@ -83,3 +120,146 @@ a:focus{outline:none;}
     border-radius: 5px;
     cursor: pointer;
 }
+.box-240-650 img,.box-235-320 img,.box-474-320 img,.box-474-340 img,.box-235-340 img,.box-240-650 img,
+.box-94-94 img,.box-90-90 img,.box-70-70 img,.box-140-140 img, .box-430-110 img{
+    width: 100%;
+}
+.box-430-110{
+    width: 430px;
+    height: 110px;
+    text-align: center;
+}
+.box-140-140{
+    width: 140px;
+    height: 140px;
+    text-align: center;
+}
+.box-70-70{
+    width: 70px;
+    height: 70px;
+    text-align: center;
+}
+.box-90-90{
+    width: 90px;
+    height: 90px;
+    text-align: center;
+}
+.box-94-94{
+    width: 94px;
+    height: 94px;
+    text-align: center;
+}
+
+
+.box-240-650{
+    height: 650px;
+    width: 240px;
+    text-align: center;
+}
+.box-235-320{
+    width: 235px;
+    height: 320px;
+    text-align: center;
+}
+.box-474-320{
+    width: 474px;
+    height: 320px;
+    text-align: center;
+}
+.box-474-340{
+    width: 474px;
+    height: 320px;
+    text-align: center;
+}
+.box-235-340{
+    width: 235px;
+    height: 320px;
+    text-align: center;
+}
+.box-240-650{
+    width: 240px;
+    height: 650px;
+    text-align: center;
+}
+.box-80-80{
+    width: 80px;
+    height: 80px;
+    text-align: center;
+}
+.w200{
+    width: 200px;
+}
+.w100{
+    width: 100px;
+}
+.red-star-active{
+    display: inline-block;
+    width: 22px;
+    height: 20px;
+    background: url("/images/center-xin-1.png") no-repeat center center !important;
+    cursor: pointer;
+}
+.red-star{
+    display: inline-block;
+    width: 22px;
+    height: 20px;
+    background: url("/images/center-xin-2.png") no-repeat center center;
+    cursor: pointer;
+}
+.radio-box{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url("/images/userinfo-icon-3.png") no-repeat center center;
+    cursor: pointer;
+}
+.radio-box-active{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url("/images/userinfo-icon-2.png") no-repeat center center;
+    cursor: pointer;
+}
+.red-btn{
+    height: 50px;
+    width: 150px;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    line-height: 50px;
+    background-color: #da251d;
+    border-radius: 5px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.line-clamp-1{
+     display: -webkit-box;
+     -webkit-box-orient: vertical;
+     -webkit-line-clamp: 1;
+     overflow: hidden;
+ }
+.line-clamp-2{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.line-clamp-3{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+.line-height-30{
+    line-height: 30px !important;
+}
+.line-through{
+    text-decoration:line-through;
+    color: #da251d;
+}
+
+/*分页 start*/
+.pagination{text-align: center;margin: 50px 0;}
+.pagination-btn{padding:.06rem .1rem;margin-right:4px;border-radius:4px;cursor:pointer;color:#999;display:inline-block;box-sizing:border-box;width:44px;text-align:center}.pagination-wrap{position:relative;display:inline-block;padding-left:0}.pagination-ellipsis{color:#999;position:relative;top:-5px;display:inline-block;padding:0 .12rem;margin-right:4px}.pagination-current{color:#fff;background-color: #da251d}.pagination-disabled{cursor:not-allowed}#pagination-next,#pagination-prev{padding-right:.08rem;padding-left:.08rem}.pagenum{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;vertical-align:middle}
+/*分页 end*/

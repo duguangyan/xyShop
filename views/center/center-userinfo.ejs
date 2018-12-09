@@ -1,0 +1,56 @@
+<%include ../layouts/header.ejs %>
+<div class="content">
+    <%include ../layouts/search.ejs %>
+    <div class="center">
+        <div class="w1200 cf">
+            <div class="center-left">
+                <%include ../layouts/center-sider.ejs %>
+            </div>
+            <div class="center-right">
+                <div class="center-userinfo cf">
+                    <div class="center-userinfo-title">
+                        <img src="/images/userinfo-icon-1.png"> <span class="c-red fs18"> 账户信息</span>
+                    </div>
+                    <div class="center-userinfo-content cf">
+                        <div class="fl cuc-box-1">
+                            <div class="box-140-140">
+                                <img src="http://placehold.it/140x140">
+                            </div>
+                        </div>
+                        <div class="fl cuc-box-2">
+                            <ul>
+                                <li class="cuc-li-1">用户名：   <span>18664791629</span></li>
+                                <li class="cuc-li-2">手机号：   <span>18664791629</span></li>
+                                <li class="cuc-li-3">电子邮箱：  <span class="c-yellow">尚未绑定电子邮箱</span></li>
+                                <li class="cuc-li-4">昵称：     <input type="text" placeholder="请输入昵称"></li>
+                                <li class="cuc-li-5">真实姓名：  <input type="text" placeholder="请输入真实姓名"></li>
+                                <li class="cuc-li-6">性别：
+                                    <span class="userinfo-radio" data-index="0"><i class="radio-box-active" ></i>男</span>
+                                    <span class="userinfo-radio" data-index="1"><i class="radio-box" ></i>女</span>
+                                </li>
+                                <li class="cuc-li-7">所在地：
+                                    <input type="text"><span>省</span>
+                                    <input type="text"><span>市</span>
+                                    <input type="text"><span>区</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="userinfo-save fs18">保存信息</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<%include ../layouts/footer.ejs %>
+<script>
+$(function () {
+    $('.userinfo-radio').click(function () {
+        var index = $(this).attr("data-index");
+        $('.userinfo-radio').find("i").addClass("radio-box").removeClass("radio-box-active")
+        $('.userinfo-radio').find("i").eq(index).addClass("radio-box-active")
+        alert(index?"男":"女")
+    })
+})
+</script>

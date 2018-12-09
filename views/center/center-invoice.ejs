@@ -1,0 +1,170 @@
+<%include ../layouts/header.ejs %>
+<div class="content">
+    <%include ../layouts/search.ejs %>
+    <div class="center">
+        <div class="w1200 cf">
+            <div class="center-left">
+                <%include ../layouts/center-sider.ejs %>
+            </div>
+            <div class="center-right">
+                <div class="center-invoice">
+                    <p class="fs20 c-red center-invoice-title">发票信息管理</p>
+                    <ul class="cf">
+                        <li class="fs14">
+                            <div class="center-invoice-top">
+                                <p> 名称 : <span>马云</span>
+                                <p> 联系方式 : <span>15817663255</span>  <span class="mgl-10">广东省广州市....</span></p>
+                                <p> 邮箱 : <span>diso2010@126.com</span></p>
+                                <p> 名称 : <span>马云</span> <span>12345*12345*</span></p>
+                                <div class="cf cit-box-1">
+                                    <div class="fl">
+                                        <p>
+                                            项目名称项目名称项目名称项目名称
+                                            项目名称项目名称项目名称项目名称
+                                            项目名称项目名称项目名称项目名称
+                                            项目名称项目名称项目名称项目名称
+                                            项目名称项目名称项目名称
+                                        </p>
+                                    </div>
+                                    <div class="fl">
+                                        <div class="invoice-person">个人</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="center-invoice-btn">
+                                <span class="c-yellow center-invoice-edit" data-id="1">修改</span>
+                                <span class="c-red center-invoice-del" data-id="1">删除</span>
+                            </div>
+                        </li>
+                        <li class="fs14">
+                            <div class="center-invoice-top">
+                                <p> 名称 : <span>马云</span>
+                                <p> 联系方式 : <span>15817663255</span>  <span class="mgl-10">广东省广州市....</span></p>
+                                <p> 邮箱 : <span>diso2010@126.com</span></p>
+                                <p> 名称 : <span>马云</span> <span>12345*12345*</span></p>
+                                <div class="cf cit-box-1">
+                                    <div class="fl">
+                                        <p>
+                                            项目名称项目名称项目名称项目名称
+                                            项目名称项目名称项目名称项目名称
+                                            项目名称项目名称项目名称项目名称
+                                            项目名称项目名称项目名称项目名称
+                                            项目名称项目名称项目名称
+                                        </p>
+                                    </div>
+                                    <div class="fl">
+                                        <div class="invoice-person">企业普通</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="center-invoice-btn">
+                                <span class="c-yellow center-invoice-edit" data-id="2">修改</span>
+                                <span class="c-red center-invoice-del" data-id="2">删除</span>
+                            </div>
+                        </li>
+                        <li class="fs14">
+                            <div class="center-invoice-top">
+                                <p> 名称 : <span>马云</span>
+                                <p> 联系方式 : <span>15817663255</span>  <span class="mgl-10">广东省广州市....</span></p>
+                                <p> 邮箱 : <span>diso2010@126.com</span></p>
+                                <p> 名称 : <span>马云</span> <span>12345*12345*</span></p>
+                                <div class="cf cit-box-1">
+                                    <div class="fl">
+                                        <p>
+                                            项目名称项目名称项目名称项目名称
+                                            项目名称项目名称项目名称项目名称
+                                            项目名称项目名称项目名称项目名称
+                                            项目名称项目名称项目名称项目名称
+                                            项目名称项目名称项目名称
+                                        </p>
+                                    </div>
+                                    <div class="fl">
+                                        <div class="invoice-person">企业专用</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="center-invoice-btn">
+                                <span class="c-yellow center-invoice-edit" data-id="3">修改</span>
+                                <span class="c-red center-invoice-del" data-id="3">删除</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="invoice-add">
+                    <img src="/images/invoice-icon-1.png"> <span class="fs18 c-red">新增发票信息</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="index-popup">
+    <div class="ip-bg"></div>
+    <div class="ip-content">
+        <h5>发票信息</h5>
+        <div class="ip-main">
+            <p class="fs24 ip-main-p">选择你要新增的发票类型</p>
+            <div class="ip-main-warp">
+                <span class="ip-main-box ip-main-box-active">1</span> <i></i>
+                <span class="ip-main-box">2</span> <i></i>
+                <span class="ip-main-box">3</span>
+            </div>
+            <div class="ip-main-info">
+                <span>发票类型</span>
+                <span>填写发票信息</span>
+                <span>完成</span>
+            </div>
+            <div class="ip-main-radiobox" data-index="0">
+                <i class="radio-box radio-box-active"></i> <span>个人发票</span>
+            </div>
+            <div class="ip-main-radiobox" data-index="1">
+                <i class="radio-box"></i> <span>企业普通发票</span>
+            </div>
+            <div class="ip-main-radiobox" data-index="2">
+                <i class="radio-box"></i> <span>企业专用发票</span>
+            </div>
+        </div>
+        <div class="ip-btn red-btn">
+            下一步
+        </div>
+    </div>
+</div>
+<%include ../layouts/footer.ejs %>
+<script>
+$(function () {
+    // 点击新增发票显示弹窗
+    $(".invoice-add").click(function () {
+        $(".index-popup").show();
+    })
+    // 选择发票类型
+    $(".ip-main-radiobox").click(function () {
+        var index = $(this).attr("data-index");
+        $(".ip-main-radiobox").find("i").removeClass("radio-box-active");
+        $(".ip-main-radiobox").eq(index).find("i").addClass("radio-box-active");
+        alert("发票类型="+index+"    : 0->个人 1->普通 2->专用");
+    })
+    // 点击背景关闭弹窗
+    $(".ip-bg").click(function () {
+        $(".index-popup").hide();
+    })
+
+    // 点击下一步按钮
+    $(".ip-btn").click(function () {
+        alert("你点了下一步按钮");
+        $(".index-popup").hide();
+    })
+
+    // 点击修改
+    $(".center-invoice-edit").click(function () {
+        var id = $(this).attr("data-id");
+        alert("你点击了id是 "+id+" 编辑按钮");
+    })
+
+    // 点击删除
+    $(".center-invoice-del").click(function () {
+        var id = $(this).attr("data-id");
+        alert("你点击了id是 "+id+" 删除按钮");
+    })
+})
+</script>

@@ -1,0 +1,115 @@
+<%include ../layouts/header.ejs %>
+<div class="content">
+    <%include ../layouts/search.ejs %>
+    <div class="center">
+        <div class="w1200 cf">
+            <div class="center-left">
+                <%include ../layouts/center-sider.ejs %>
+            </div>
+            <div class="center-right">
+                <div class="center-stock">
+                    <div class="center-stock-title cf">
+                        <span class="c-red">存货</span>
+                        <span class="cst-search fr">
+                            <form action="">
+                                <input type="text" placeholder="输入你想查找的存货信息">
+                                <img src="/images/center-search-icon.png">
+                            </form>
+                        </span>
+                    </div>
+
+                    <div class="center-stock-table">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>商品信息</th>
+                                <th>存货量</th>
+                                <th>有效期</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="cf">
+                                    <div class="box-70-70 fl">
+                                        <img src="http://placehold.it/70x70">
+                                    </div>
+                                    <p class="mgt-10">得力7810白板擦110*48*40 </p>
+                                </td>
+                                <td>32</td>
+                                <td>2018.12.31 </td>
+                                <td>
+                                    <p>购买</p>
+                                    <p class="line-through"> <span class="c-000">兑换其他物品</span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="cf">
+                                    <div class="box-70-70 fl">
+                                        <img src="http://placehold.it/70x70">
+                                    </div>
+                                    <p class="mgt-10">得力7810白板擦110*48*40 </p>
+                                </td>
+                                <td>32</td>
+                                <td>2018.12.31 </td>
+                                <td>
+                                    <p>购买</p>
+                                    <p class="line-through"> <span class="c-000">兑换其他物品</span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="cf">
+                                    <div class="box-70-70 fl">
+                                        <img src="http://placehold.it/70x70">
+                                    </div>
+                                    <p class="mgt-10">得力7810白板擦110*48*40 </p>
+                                </td>
+                                <td>32</td>
+                                <td>2018.12.31 </td>
+                                <td>
+                                    <p>购买</p>
+                                    <p class="line-through"> <span class="c-000">兑换其他物品</span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="cf">
+                                    <div class="box-70-70 fl">
+                                        <img src="http://placehold.it/70x70">
+                                    </div>
+                                    <p class="mgt-10">得力7810白板擦110*48*40 </p>
+                                </td>
+                                <td>32</td>
+                                <td>2018.12.31 </td>
+                                <td>
+                                    <p class="line-height-30">购买</p>
+                                    <p class="line-through line-height-30"> <span class="c-000">兑换其他物品</span></p>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="box pagination" id="wrap2"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<%include ../layouts/footer.ejs %>
+<script>
+    // 分页
+    var onPagechange = function(page){
+        console.log('当前点击页码',page);
+    }
+    var obj = {
+        wrapid:'wrap2', //页面显示分页器容器id
+        total:18891,//总条数
+        pagesize:10,//每页显示10条
+        currentPage:1,//当前页
+        onPagechange:onPagechange,
+        //btnCount:7 页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
+    }
+    pagination.init(obj);
+</script>

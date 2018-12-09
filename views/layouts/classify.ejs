@@ -1,12 +1,64 @@
-<div class="w1200 index-cart">
-    <ul class="cf">
-        <li><a href="/goods"><img src="/images/index_content_18.png"><p>铜版纸名片</p></a></li>
-        <li><a href="/goods"><img src="/images/index_content_17.png"><p>特种纸名片</p></a></li>
-        <li><a href="/goods"><img src="/images/index_content_16.png"><p>PVC名片</p></a></li>
-        <li><a href="/goods"><img src="/images/index_content_15.png"><p>复写单据</p></a></li>
-        <li><a href="/goods"><img src="/images/index_content_14.png"><p>圆珠笔</p></a></li>
-        <li><a href="/goods"><img src="/images/index_content_13.png"><p>办公桌</p></a></li>
-        <li><a href="/goods/detail"><img src="/images/index_content_12.png"><p>桶装水</p></a></li>
-        <li><a href="/goods"><img src="/images/index_content_11.png"><p>沙发</p></a></li>
-    </ul>
+<div class="w1200 index-cart preview cf">
+    <i class="arrow-left fl"></i>
+    <div class="index-cart-warp">
+        <ul class="cf">
+            <li><a href="/goods"><img src="/images/index_content_18.png"><p>铜版纸名片</p></a></li>
+            <li><a href="/goods"><img src="/images/index_content_17.png"><p>特种纸名片</p></a></li>
+            <li><a href="/goods"><img src="/images/index_content_16.png"><p>PVC名片</p></a></li>
+            <li><a href="/goods"><img src="/images/index_content_15.png"><p>复写单据</p></a></li>
+            <li><a href="/goods"><img src="/images/index_content_14.png"><p>圆珠笔</p></a></li>
+            <li><a href="/goods"><img src="/images/index_content_13.png"><p>办公桌</p></a></li>
+            <li><a href="/goods/detail"><img src="/images/index_content_12.png"><p>桶装水</p></a></li>
+            <li><a href="/goods"><img src="/images/index_content_11.png"><p>沙发</p></a></li>
+            <li><a href="/goods"><img src="/images/index_content_11.png"><p>沙发</p></a></li>
+            <li><a href="/goods"><img src="/images/index_content_11.png"><p>沙发</p></a></li>
+            <li><a href="/goods"><img src="/images/index_content_11.png"><p>沙发</p></a></li>
+            <li><a href="/goods"><img src="/images/index_content_11.png"><p>沙发</p></a></li>
+            <li><a href="/goods"><img src="/images/index_content_11.png"><p>沙发</p></a></li>
+            <li><a href="/goods"><img src="/images/index_content_11.png"><p>沙发</p></a></li>
+            <li><a href="/goods"><img src="/images/index_content_11.png"><p>沙发</p></a></li>
+            <li><a href="/goods"><img src="/images/index_content_11.png"><p>沙发</p></a></li>
+            <li><a href="/goods"><img src="/images/index_content_11.png"><p>沙发</p></a></li>
+            <li><a href="/goods"><img src="/images/index_content_11.png"><p>沙发</p></a></li>
+            <li><a href="/goods"><img src="/images/index_content_11.png"><p>沙发</p></a></li>
+            <li><a href="/goods"><img src="/images/index_content_18.png"><p>沙发</p></a></li>
+        </ul>
+    </div>
+    <i class="arrow-right fr"></i>
 </div>
+<script>
+    $(function () {
+        var classify     = {};       // classify对象
+        classify.index   = 0;        // 计数器
+        classify.width   = 144 * 4;  // 运动宽度
+        classify.time    = 1000;     // 时间
+        classify.Length  = $(".index-cart ul li").length;
+        classify.UlWidth = (classify.Length * (classify.width/4));
+        $(".index-cart ul").width(classify.UlWidth);
+        if(classify.Length<=8){
+            $(".index-cart .arrow-left").hide();
+            $(".index-cart .arrow-right").hide();
+        }
+        // 左侧点击
+        $(".index-cart .arrow-left").click(function () {
+            console.log(classify.index)
+            if(classify.index<=0){
+                return false;
+            }else{
+                classify.index --;
+                $(".index-cart-warp").animate({scrollLeft:classify.index * classify.width},classify.time);
+            }
+        })
+        // 右侧点击
+        $(".index-cart .arrow-right").click(function () {
+            console.log(classify.index)
+            if((classify.Length/4)-2 <= classify.index) {
+                return false;
+            }else{
+                classify.index ++;
+                $(".index-cart-warp").animate({scrollLeft:classify.index * classify.width},classify.time);
+            }
+
+        })
+    })
+</script>
