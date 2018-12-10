@@ -35,9 +35,18 @@
                             <img src="/images/center-flag.png">
                             全部订单
                         </span>
-                        <span>待付款</span>
-                        <span>待收货</span>
-                        <span>待评价</span>
+                        <span>
+                            <img src="/images/center-flag.png">
+                            待付款
+                        </span>
+                        <span>
+                            <img src="/images/center-flag.png">
+                            待收货
+                        </span>
+                        <span>
+                            <img src="/images/center-flag.png">
+                            待评价
+                        </span>
                     </div>
 
                     <div class="crc-search">
@@ -199,7 +208,7 @@
 
 <div class="center-invoice-warp">
     <div class="invoice-bg"></div>
-    <div class="invoice-content">
+    <div class="invoice-content invoice-content-box-1">
         <h5>发票信息</h5>
         <div class="invoice-order-number">
             <span>订单号 : 123456789</span>
@@ -216,7 +225,7 @@
 
         </div>
         <div class="invoice-pop-box">
-            <p>发票型号</p>
+            <p >发票型号</p>
 
             <select name="" id="">
                 <option value="1">1</option>
@@ -228,14 +237,31 @@
         <div class="red-btn invoice-pop-btn">
             开发票
         </div>
+        <div class="red-btn invoice-pop-btn-success">
+            开票成功 <img src="/images/center-icon-finsh.png">
+        </div>
+
+    </div>
+    <div class="invoice-content invoice-content-box-2">
+        <h5>发票信息</h5>
+        <p class="c-red fs18 icb2-p-1">提示</p>
+        <p class="icb2-p-2">确定以“ <span class="icb2-sapn-1">马云（个人）</span>”为模版开<span class="c-red icb2-sapn-2">个人发票（电子）</span>吗？</p>
+        <div class="icb2-span-btn">
+            <span>确定</span>
+            <span>取消</span>
+        </div>
     </div>
 </div>
 
 <%include ../layouts/footer.ejs %>
 <script>
+
+    $(".crc-nav span").eq(0).find("img").css('opacity',1);
     // 全部订单/待付款/待收货 nav切换
     $(".crc-nav span").click(function () {
         $(".crc-nav span").removeClass("c-red").eq($(this).index()).addClass("c-red");
+        $(".crc-nav span").find("img").css('opacity',0);
+        $(this).find("img").css('opacity',1);
         // todo ajax
     })
     // 查看所有订单
@@ -255,11 +281,36 @@
 
     // 开发票
     $(".center-invoice").click(function () {
+        $(".invoice-pop-btn-success").hide();
+        $(".invoice-pop-btn").show();
         var id = $(this).attr("data-id");
-        $(".center-invoice-warp").show();
+        $(".center-invoice-warp").fadeIn(200);
     })
     // 关闭开发票弹窗
     $(".invoice-bg").click(function () {
-        $(".center-invoice-warp").hide();
+        $(".center-invoice-warp").fadeOut(200);
+    })
+    
+    // 开发票
+    $(".invoice-pop-btn").click(function () {
+        $(".invoice-content-box-1").fadeOut(200);
+        $(".invoice-content-box-2").fadeIn(200);
+
+    })
+    // 确认开发提示框
+    $(".icb2-span-btn span").click(function () {
+        $(".invoice-content-box-2").fadeOut(200);
+        $(".invoice-content-box-1").fadeIn(200);
+        if($(this).index() == 0){
+            $(".invoice-pop-btn").fadeOut(200);
+            setTimeout(function () {
+                $(".invoice-pop-btn-success").fadeIn(200);
+                setTimeout(function () {
+                    $(".center-invoice-warp").fadeOut(200);
+                },2000)
+            },220)
+        }else{
+
+        }
     })
 </script>

@@ -8,6 +8,9 @@ router.get('/', function(req, res, next) {
 router.get('/evaluate', function(req, res, next) {
     res.render('center/center-evaluate', { title: '个人中心评价管理'});
 });
+router.get('/evaluate-list', function(req, res, next) {
+    res.render('center/center-evaluate-list', { title: '个人中心评价列表'});
+});
 router.get('/invoice', function(req, res, next) {
     res.render('center/center-invoice', { title: '个人中心发票信息'});
 });

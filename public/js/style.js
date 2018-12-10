@@ -14,4 +14,10 @@ $(function () {
         window.location.href = '/users/register-finish';
     })
 
+
+
+
+
+
+
 })

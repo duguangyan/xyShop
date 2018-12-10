@@ -1,0 +1,169 @@
+<%include ../layouts/header.ejs %>
+<div class="content">
+    <%include ../layouts/search.ejs %>
+    <div class="center">
+        <div class="w1200 cf">
+            <div class="center-left">
+                <%include ../layouts/center-sider.ejs %>
+            </div>
+            <div class="center-right">
+               <div class="center-evaluate-list">
+                    <div class="cel-top">
+                        <ul class="cf">
+                            <li class="cel-top-li-active">待评价</li>
+                            <li>已评价</li>
+                        </ul>
+
+                    </div>
+                   <div class="cel-content">
+                       <ul>
+                           <li>
+                               <div class="box-140-140">
+                                   <img src="http://placehold.it/140x140">
+                               </div>
+                               <div>
+                                   <p class="line-clamp-1">得力7810白板檫110*48*40</p>
+                                   <p>￥ 10</p>
+                                   <p>95213人评价</p>
+                               </div>
+                               <div class="cel-btn">
+                                   <a href="/center/evaluate">发布评价</a>
+                               </div>
+                           </li>
+                           <li>
+                               <div class="box-140-140">
+                                   <img src="http://placehold.it/140x140">
+                               </div>
+                               <div>
+                                   <p class="line-clamp-1">得力7810白板檫110*48*40</p>
+                                   <p>￥ 10</p>
+                                   <p>95213人评价</p>
+                               </div>
+                               <div class="cel-btn">
+                                   发布评价
+                               </div>
+                           </li>
+                           <li>
+                               <div class="box-140-140">
+                                   <img src="http://placehold.it/140x140">
+                               </div>
+                               <div>
+                                   <p class="line-clamp-1">得力7810白板檫110*48*40</p>
+                                   <p>￥ 10</p>
+                                   <p>95213人评价</p>
+                               </div>
+                               <div class="cel-btn">
+                                   发布评价
+                               </div>
+                           </li>
+                           <li>
+                               <div class="box-140-140">
+                                   <img src="http://placehold.it/140x140">
+                               </div>
+                               <div>
+                                   <p class="line-clamp-1">得力7810白板檫110*48*40</p>
+                                   <p>￥ 10</p>
+                                   <p>95213人评价</p>
+                               </div>
+                               <div class="cel-btn">
+                                   发布评价
+                               </div>
+                           </li>
+                           <li>
+                               <div class="box-140-140">
+                                   <img src="http://placehold.it/140x140">
+                               </div>
+                               <div>
+                                   <p class="line-clamp-1">得力7810白板檫110*48*40</p>
+                                   <p>￥ 10</p>
+                                   <p>95213人评价</p>
+                               </div>
+                               <div class="cel-btn">
+                                   发布评价
+                               </div>
+                           </li>
+                       </ul>
+                   </div>
+                   <div class="cel-content">
+                       <ul>
+                           <li>
+                               <div class="box-140-140">
+                                   <img src="http://placehold.it/140x140">
+                               </div>
+                               <div>
+                                   <p class="line-clamp-1">得力7810白板檫110*48*40</p>
+                                   <p>￥ 10</p>
+                                   <p>95213人评价</p>
+                               </div>
+                               <div class="cel-btn">
+                                   查看评价
+                               </div>
+                           </li>
+                           <li>
+                               <div class="box-140-140">
+                                   <img src="http://placehold.it/140x140">
+                               </div>
+                               <div>
+                                   <p class="line-clamp-1">得力7810白板檫110*48*40</p>
+                                   <p>￥ 10</p>
+                                   <p>95213人评价</p>
+                               </div>
+                               <div class="cel-btn">
+                                   查看评价
+                               </div>
+                           </li>
+                           <li>
+                               <div class="box-140-140">
+                                   <img src="http://placehold.it/140x140">
+                               </div>
+                               <div>
+                                   <p class="line-clamp-1">得力7810白板檫110*48*40</p>
+                                   <p>￥ 10</p>
+                                   <p>95213人评价</p>
+                               </div>
+                               <div class="cel-btn">
+                                   查看评价
+                               </div>
+                           </li>
+                           <li>
+                               <div class="box-140-140">
+                                   <img src="http://placehold.it/140x140">
+                               </div>
+                               <div>
+                                   <p class="line-clamp-1">得力7810白板檫110*48*40</p>
+                                   <p>￥ 10</p>
+                                   <p>95213人评价</p>
+                               </div>
+                               <div class="cel-btn">
+                                   查看评价
+                               </div>
+                           </li>
+                           <li>
+                               <div class="box-140-140">
+                                   <img src="http://placehold.it/140x140">
+                               </div>
+                               <div>
+                                   <p class="line-clamp-1">得力7810白板檫110*48*40</p>
+                                   <p>￥ 10</p>
+                                   <p>95213人评价</p>
+                               </div>
+                               <div class="cel-btn">
+                                   查看评价
+                               </div>
+                           </li>
+
+                       </ul>
+                   </div>
+               </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<%include ../layouts/footer.ejs %>
+<script>
+$(".cel-top ul li").click(function () {
+    $(this).addClass("cel-top-li-active").siblings().removeClass("cel-top-li-active");
+    $(".cel-content").eq($(this).index()).show().siblings(".cel-content").hide();
+})
+</script>

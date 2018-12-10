@@ -99,61 +99,253 @@
     </div>
 </div>
 
-<div class="index-popup">
-    <div class="ip-bg"></div>
-    <div class="ip-content">
-        <h5>发票信息</h5>
-        <div class="ip-main">
-            <p class="fs24 ip-main-p">选择你要新增的发票类型</p>
-            <div class="ip-main-warp">
-                <span class="ip-main-box ip-main-box-active">1</span> <i></i>
-                <span class="ip-main-box">2</span> <i></i>
-                <span class="ip-main-box">3</span>
-            </div>
-            <div class="ip-main-info">
-                <span>发票类型</span>
-                <span>填写发票信息</span>
-                <span>完成</span>
-            </div>
-            <div class="ip-main-radiobox" data-index="0">
-                <i class="radio-box radio-box-active"></i> <span>个人发票</span>
-            </div>
-            <div class="ip-main-radiobox" data-index="1">
-                <i class="radio-box"></i> <span>企业普通发票</span>
-            </div>
-            <div class="ip-main-radiobox" data-index="2">
-                <i class="radio-box"></i> <span>企业专用发票</span>
-            </div>
-        </div>
-        <div class="ip-btn red-btn">
-            下一步
-        </div>
-    </div>
-</div>
+<!--<div class="index-popup">-->
+    <!--<div class="ip-bg"></div>-->
+    <!--<div class="ip-content">-->
+        <!--<h5>发票信息</h5>-->
+        <!--<div class="ip-main">-->
+
+            <!--<div class="ip-main-warp">-->
+                <!--<span class="ip-main-box ip-main-box-active">1</span> <i></i>-->
+                <!--<span class="ip-main-box">2</span> <i></i>-->
+                <!--<span class="ip-main-box">3</span>-->
+            <!--</div>-->
+            <!--<div class="ip-main-content">-->
+                <!--<div class="ip-main-info">-->
+                    <!--<span>发票类型</span>-->
+                    <!--<span>填写发票信息</span>-->
+                    <!--<span>完成</span>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="ip-main-content">-->
+
+                <!--<div class="ip-main-content-1">-->
+                    <!--<div class="ip-main-radiobox" data-index="0">-->
+                        <!--<i class="radio-box radio-box-active"></i> <span>个人发票</span>-->
+                    <!--</div>-->
+                    <!--<div class="ip-main-radiobox" data-index="1">-->
+                        <!--<i class="radio-box"></i> <span>企业普通发票</span>-->
+                    <!--</div>-->
+                    <!--<div class="ip-main-radiobox" data-index="2">-->
+                        <!--<i class="radio-box"></i> <span>企业专用发票</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+
+                <!--<div class="ip-main-content-2">-->
+                    <!--<span class="c-red">*</span><span>发票抬头</span><input type="text" placeholder="请输入发票抬头内容">-->
+                <!--</div>-->
+                <!--<div class="ip-main-content-3">-->
+                    <!--<div class="imc-box-1">-->
+                        <!--<span class="c-red">*</span><span>发票抬头</span><input type="text" placeholder="请输入发票抬头内容">-->
+                    <!--</div>-->
+                    <!--<div class="imc-box-2">-->
+                        <!--<span class="c-red">*</span><span>税号</span><input type="text" placeholder="请输入纳税人识别号">-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--<div class="ip-main-content-4">-->
+                    <!--<div class="imc-box-1">-->
+                        <!--<span class="c-red">*</span><span>发票抬头</span><input type="text" placeholder="请输入发票抬头内容">-->
+                    <!--</div>-->
+                    <!--<div class="imc-box-2">-->
+                        <!--<span class="c-red">*</span><span>税号</span><input type="text" placeholder="请输入纳税人识别号">-->
+                    <!--</div>-->
+                    <!--<div class="imc-box-3">-->
+                        <!--<span class="c-red">*</span><span>地址</span><input type="text" placeholder="请输入营业执照注册地址">-->
+                    <!--</div>-->
+                    <!--<div class="imc-box-4">-->
+                        <!--<span class="c-red">*</span><span>联系电话</span><input type="text" placeholder="请输入手机号码或者企业电话号码">-->
+                    <!--</div>-->
+                    <!--<div class="imc-box-5">-->
+                        <!--<span class="c-red">*</span><span>开户行</span><input type="text" placeholder="请输入包括支行的地址">-->
+                    <!--</div>-->
+                    <!--<div class="imc-box-6">-->
+                        <!--<span class="c-red">*</span><span>帐号</span><input type="text" placeholder="请输入开户行账号">-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="ip-main-content-5">-->
+                    <!--<div><img src="/images/center-pop-icon-1.png"></div>-->
+                    <!--<div>-->
+                        <!--恭喜！新的发票信息已经添加完成啦！-->
+                    <!--</div>-->
+                <!--</div>-->
+
+
+            <!--</div>-->
+
+        <!--</div>-->
+        <!--<div class="ip-btn red-btn" data-index="1">-->
+            <!--下一步-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
 <%include ../layouts/footer.ejs %>
 <script>
 $(function () {
-    // 点击新增发票显示弹窗
-    $(".invoice-add").click(function () {
-        $(".index-popup").show();
-    })
-    // 选择发票类型
-    $(".ip-main-radiobox").click(function () {
-        var index = $(this).attr("data-index");
+    // 选择 个人 普通 专用
+    $(document).on("click",".ip-main-radiobox",function (e) {
+        var index = parseInt($(this).attr("data-index"));
         $(".ip-main-radiobox").find("i").removeClass("radio-box-active");
         $(".ip-main-radiobox").eq(index).find("i").addClass("radio-box-active");
-        alert("发票类型="+index+"    : 0->个人 1->普通 2->专用");
-    })
-    // 点击背景关闭弹窗
-    $(".ip-bg").click(function () {
-        $(".index-popup").hide();
+        invoiceType = index;
+        // alert("发票类型="+index+"    : 0->个人 1->普通 2->专用");
     })
 
-    // 点击下一步按钮
-    $(".ip-btn").click(function () {
-        alert("你点了下一步按钮");
-        $(".index-popup").hide();
-    })
+    var invoiceType = 0;
+
+    var htmlCommon = '   <div class="ip-main-warp">\n' +
+        '                <span class="ip-main-box ip-main-box-active">1</span> <i></i>\n' +
+        '                <span class="ip-main-box">2</span> <i></i>\n' +
+        '                <span class="ip-main-box">3</span>\n' +
+        '            </div>\n' +
+        '            <div>\n' +
+        '                <div class="ip-main-info">\n' +
+        '                    <span>发票类型</span>\n' +
+        '                    <span>填写发票信息</span>\n' +
+        '                    <span>完成</span>\n' +
+        '                </div>\n' +
+        '            </div>';
+    var html1 = '   <div class="ip-main-warp">\n' +
+        '                <span class="ip-main-box ip-main-box-active">1</span> <i></i>\n' +
+        '                <span class="ip-main-box">2</span> <i></i>\n' +
+        '                <span class="ip-main-box">3</span>\n' +
+        '            </div>\n' +
+        '            <div>\n' +
+        '                <div class="ip-main-info">\n' +
+        '                    <span>发票类型</span>\n' +
+        '                    <span>填写发票信息</span>\n' +
+        '                    <span>完成</span>\n' +
+        '                </div>\n' +
+        '            </div>'+
+        '<div class="ip-main-content-1">\n' +
+        '                    <div class="ip-main-radiobox" data-index="0">\n' +
+        '                        <i class="radio-box radio-box-active"></i> <span>个人发票</span>\n' +
+        '                    </div>\n' +
+        '                    <div class="ip-main-radiobox" data-index="1">\n' +
+        '                        <i class="radio-box"></i> <span>企业普通发票</span>\n' +
+        '                    </div>\n' +
+        '                    <div class="ip-main-radiobox" data-index="2">\n' +
+        '                        <i class="radio-box"></i> <span>企业专用发票</span>\n' +
+        '                    </div>\n' +
+        '                </div>';
+    var html2  = '   <div class="ip-main-warp">\n' +
+        '                <span class="ip-main-box ">1</span> <i></i>\n' +
+        '                <span class="ip-main-box ip-main-box-active">2</span> <i></i>\n' +
+        '                <span class="ip-main-box">3</span>\n' +
+        '            </div>\n' +
+        '            <div>\n' +
+        '                <div class="ip-main-info">\n' +
+        '                    <span>发票类型</span>\n' +
+        '                    <span>填写发票信息</span>\n' +
+        '                    <span>完成</span>\n' +
+        '                </div>\n' +
+        '            </div>'+
+        '<div class="ip-main-content-2">\n' +
+        '                    <span class="c-red">*</span><span>发票抬头</span><input type="text" placeholder="请输入发票抬头内容">\n' +
+        '                </div>';
+
+    var html3 = '   <div class="ip-main-warp">\n' +
+        '                <span class="ip-main-box ">1</span> <i></i>\n' +
+        '                <span class="ip-main-box ip-main-box-active">2</span> <i></i>\n' +
+        '                <span class="ip-main-box">3</span>\n' +
+        '            </div>\n' +
+        '            <div>\n' +
+        '                <div class="ip-main-info">\n' +
+        '                    <span>发票类型</span>\n' +
+        '                    <span>填写发票信息</span>\n' +
+        '                    <span>完成</span>\n' +
+        '                </div>\n' +
+        '            </div>'+
+        '<div class="ip-main-content-3">\n' +
+        '                    <div class="imc-box-1">\n' +
+        '                        <span class="c-red">*</span><span>发票抬头</span><input type="text" placeholder="请输入发票抬头内容">\n' +
+        '                    </div>\n' +
+        '                    <div class="imc-box-2">\n' +
+        '                        <span class="c-red">*</span><span>税号</span><input type="text" placeholder="请输入纳税人识别号">\n' +
+        '                    </div>\n' +
+        '                </div>';
+
+    var html4 = '   <div class="ip-main-warp">\n' +
+        '                <span class="ip-main-box ">1</span> <i></i>\n' +
+        '                <span class="ip-main-box ip-main-box-active">2</span> <i></i>\n' +
+        '                <span class="ip-main-box">3</span>\n' +
+        '            </div>\n' +
+        '            <div>\n' +
+        '                <div class="ip-main-info">\n' +
+        '                    <span>发票类型</span>\n' +
+        '                    <span>填写发票信息</span>\n' +
+        '                    <span>完成</span>\n' +
+        '                </div>\n' +
+        '            </div>'+
+        '<div class="ip-main-content-4">\n' +
+        '                    <div class="imc-box-1">\n' +
+        '                        <span class="c-red">*</span><span>发票抬头</span><input type="text" placeholder="请输入发票抬头内容">\n' +
+        '                    </div>\n' +
+        '                    <div class="imc-box-2">\n' +
+        '                        <span class="c-red">*</span><span>税号</span><input type="text" placeholder="请输入纳税人识别号">\n' +
+        '                    </div>\n' +
+        '                    <div class="imc-box-3">\n' +
+        '                        <span class="c-red">*</span><span>地址</span><input type="text" placeholder="请输入营业执照注册地址">\n' +
+        '                    </div>\n' +
+        '                    <div class="imc-box-4">\n' +
+        '                        <span class="c-red">*</span><span>联系电话</span><input type="text" placeholder="请输入手机号码或者企业电话号码">\n' +
+        '                    </div>\n' +
+        '                    <div class="imc-box-5">\n' +
+        '                        <span class="c-red">*</span><span>开户行</span><input type="text" placeholder="请输入包括支行的地址">\n' +
+        '                    </div>\n' +
+        '                    <div class="imc-box-6">\n' +
+        '                        <span class="c-red">*</span><span>帐号</span><input type="text" placeholder="请输入开户行账号">\n' +
+        '                    </div>\n' +
+        '                </div>';
+
+    var html5 = '<div class="ip-main-content-5">\n' +
+        '                    <div><img src="/images/center-pop-icon-1.png"></div>\n' +
+        '                    <div>\n' +
+        '                        恭喜！新的发票信息已经添加完成啦！\n' +
+        '                    </div>\n' +
+        '                </div>';
+
+
+
+    function invoiceFinsh (){
+        $.removeModa();
+        setTimeout(function () {
+            $.myAlert({title:'选择你要新增的发票类型',message:html5,btn:" ",callback:function(){
+                setTimeout(function () {
+                    $.removeModa();
+                },3000)
+            }})
+        },300)
+    }
+    // 点击新增发票显示弹窗
+     $(".invoice-add").click(function () {
+         $.myAlert({title:'选择你要新增的发票类型',message:html1,btn:"下一步",callback:function(){
+             $.removeModa();
+             setTimeout(()=>{
+                 if(invoiceType == 0){
+                     $.myAlert({title:'选择你要新增的发票类型',message:html2,btn:"下一步",callback:function(){
+                         //alert('个人发票:' + $(".ip-main-content-2 input").val());
+                             invoiceFinsh();
+                     }})
+                 }else if(invoiceType == 1){
+                     $.myAlert({title:'选择你要新增的发票类型',message:html3,btn:"下一步",callback:function(){
+                        //alert("普通发票")
+                             invoiceFinsh()
+                     }})
+                 }else{
+                     $.myAlert({title:'选择你要新增的发票类型',message:html4,btn:"下一步",callback:function(){
+                       //alert("专用发票");
+                             invoiceFinsh()
+                     }})
+                 }
+
+             },300)
+
+         }});
+     })
+
+
 
     // 点击修改
     $(".center-invoice-edit").click(function () {
@@ -166,5 +358,9 @@ $(function () {
         var id = $(this).attr("data-id");
         alert("你点击了id是 "+id+" 删除按钮");
     })
+
+
+
+
 })
 </script>
