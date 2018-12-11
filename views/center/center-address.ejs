@@ -1,0 +1,102 @@
+<%include ../layouts/header.ejs %>
+<div class="content">
+    <%include ../layouts/search.ejs %>
+    <div class="center">
+        <div class="w1200 cf">
+            <div class="center-left">
+                <%include ../layouts/center-sider.ejs %>
+            </div>
+            <div class="center-right">
+                <div class="center-address">
+                    <h5>收货地址</h5>
+                </div>
+                <div class="center-address-content">
+                    <ul class="cf">
+                        <li>
+                            <p class="cac-p-1 cf"><span class="fl">马晕</span> <span class="cac-set-defult fr">设为默认</span></p>
+                            <p class="cac-p-2 fs14">省-杭州市-滨江区-江南星座666浙江省-杭州市-滨江区-江南星座666浙江省-杭州市-滨江区-江南星座666</p>
+                            <p class="cac-p-3 cf"><span class="fl">123456789</span> <span class="c-red fr"> <span class="cac-span-edit">修改</span><span class="cac-span-del">删除</span></span></p>
+                        </li>
+                        <li>
+                            <p class="cac-p-1 cf"><span class="fl">马晕</span> <span class="cac-set-defult fr">设为默认</span></p>
+                            <p class="cac-p-2 fs14">浙江南星座666浙江省-杭州市-滨江区-江南星座666浙江省-杭州市-滨江区-江南星座666</p>
+                            <p class="cac-p-3 cf"><span class="fl">123456789</span> <span class="c-red fr"> <span class="cac-span-edit">修改</span><span class="cac-span-del">删除</span></span></p>
+                        </li>
+                        <li>
+                            <p class="cac-p-1 cf"><span class="fl">马晕</span> <span class="cac-set-defult fr">设为默认</span></p>
+                            <p class="cac-p-2 fs14">浙江省-杭州市-滨江区-江南星座666浙江省-杭州市-滨江区-江南星座666</p>
+                            <p class="cac-p-3 cf"><span class="fl">123456789</span> <span class="c-red fr"> <span class="cac-span-edit">修改</span><span class="cac-span-del">删除</span></span></p>
+                        </li>
+                        <li>
+                            <p class="cac-p-1 cf"><span class="fl">马晕</span> <span class="cac-set-defult fr">设为默认</span></p>
+                            <p class="cac-p-2 fs14">座666浙江省-杭州市-滨江区-江南星座666浙江省-杭州市-滨江区-江南星座666浙江省-杭州市-滨江区-江南星座666</p>
+                            <p class="cac-p-3 cf"><span class="fl">123456789</span> <span class="c-red fr"> <span class="cac-span-edit">修改</span><span class="cac-span-del">删除</span></span></p>
+                        </li>
+                        <li>
+                            <p class="cac-p-1 cf"><span class="fl">马晕</span> <span class="cac-set-defult fr">设为默认</span></p>
+                            <p class="cac-p-2 fs14">浙江省-杭州市-滨江区-江南星座666浙江省-杭州市-滨江区-江南星座666浙江省-杭州市-滨江区-江南星座666浙江省-杭州市-滨江区-江南星座666浙江省-杭州市-滨江区-江南星座666</p>
+                            <p class="cac-p-3 cf"><span class="fl">123456789</span> <span class="c-red fr"> <span class="cac-span-edit">修改</span><span class="cac-span-del">删除</span></span></p>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="center-addres-create">
+                    <div class="cac-create-title">
+                        <img src="/images/center-addres-icon-1.png">
+                        <span>新增收货地址</span>
+                    </div>
+
+                    <div class="cac-create-content">
+                        <div class="cac-craete-box cf">
+                            <span><i class="c-red">*</i>收货人姓名:</span> <span> <input type="text" placeholder="收货人姓名"></span>
+                        </div>
+                        <div class="cac-craete-box">
+                            <span><i class="c-red">*</i>所在地:</span>
+                            <span class="cf">
+                                <div id="distpicker">
+                                  <select></select>
+                                  <select></select>
+                                  <select></select>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="cac-craete-box">
+                            <span><i class="c-red">*</i>手机号码:</span> <span> <input type="text" placeholder="手机号码"></span>
+                        </div>
+                        <div class="cac-craete-box cac-craete-box-4">
+                            <span>固定电话:</span> <span> <input type="text" placeholder="区号"><input type="text" placeholder="固定电话"></span>
+                        </div>
+                    </div>
+
+                    <div class="cac-create-btn">
+                        <div class="red-btn">
+                            保存地址
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<%include ../layouts/footer.ejs %>
+<script>
+    // 三级地址初始化
+    $("#distpicker").distpicker();
+    // select change 事件 获取数据
+    $("#distpicker").change(function (e) {
+       alert($(this).find("select").eq(0).val() +'--'+ $(this).find("select").eq(1).val() + '--' +$(this).find("select").eq(2).val());
+    })
+
+    $(".cac-create-btn").click(function () {
+        var html = '<p style="text-align: center;font-size: 20px;color:#000">保存地址成功</p>';
+        $.myAlert({title:'地址信息',message:html,btn:" ",callback:function(){
+            setTimeout(function () {
+                $.removeModa();
+            },3000)
+        }});
+    })
+
+
+</script>

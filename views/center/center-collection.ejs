@@ -1,0 +1,102 @@
+<%include ../layouts/header.ejs %>
+<div class="content">
+    <%include ../layouts/search.ejs %>
+    <div class="center">
+        <div class="w1200 cf">
+            <div class="center-left">
+                <%include ../layouts/center-sider.ejs %>
+            </div>
+            <div class="center-right">
+                <div class="center-collection">
+                    <h5>商品收藏</h5>
+                    <ul class="cf">
+                        <li>
+                            <div class="box-240-240"><img src="http://placehold.it/240x240"></div>
+                            <p class="line-clamp-1 fs18 mgt-10 ccl-box">得力7810白板檫110*48*40</p>
+                            <div class="cf mgt-5 ccl-box">
+                                <span class="fs18 fl">价格：¥ 10</span>
+                                <span class="fr"> <img class="ccl-shopcart" src="/images/center-collection-icon-1.png"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box-240-240"><img src="http://placehold.it/240x240"></div>
+                            <p class="line-clamp-1 fs18 mgt-10 ccl-box">得力7810白板檫110*48*40</p>
+                            <div class="cf mgt-5 ccl-box">
+                                <span class="fs18 fl">价格：¥ 10</span>
+                                <span class="fr"> <img class="ccl-shopcart" src="/images/center-collection-icon-1.png"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box-240-240"><img src="http://placehold.it/240x240"></div>
+                            <p class="line-clamp-1 fs18 mgt-10 ccl-box">得力7810白板檫110*48*40</p>
+                            <div class="cf mgt-5 ccl-box">
+                                <span class="fs18 fl">价格：¥ 10</span>
+                                <span class="fr"> <img class="ccl-shopcart" src="/images/center-collection-icon-1.png"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box-240-240"><img src="http://placehold.it/240x240"></div>
+                            <p class="line-clamp-1 fs18 mgt-10 ccl-box">得力7810白板檫110*48*40</p>
+                            <div class="cf mgt-5 ccl-box">
+                                <span class="fs18 fl">价格：¥ 10</span>
+                                <span class="fr"> <img class="ccl-shopcart" src="/images/center-collection-icon-1.png"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box-240-240"><img src="http://placehold.it/240x240"></div>
+                            <p class="line-clamp-1 fs18 mgt-10 ccl-box">得力7810白板檫110*48*40</p>
+                            <div class="cf mgt-5 ccl-box">
+                                <span class="fs18 fl">价格：¥ 10</span>
+                                <span class="fr"> <img class="ccl-shopcart" src="/images/center-collection-icon-1.png"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box-240-240"><img src="http://placehold.it/240x240"></div>
+                            <p class="line-clamp-1 fs18 mgt-10 ccl-box">得力7810白板檫110*48*40</p>
+                            <div class="cf mgt-5 ccl-box">
+                                <span class="fs18 fl">价格：¥ 10</span>
+                                <span class="fr"> <img class="ccl-shopcart" src="/images/center-collection-icon-1.png"></span>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="box pagination" id="collection-pagination"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<%include ../layouts/footer.ejs %>
+<script>
+
+    // nav切换
+    $(".center-coupon-nav ul li").click(function () {
+        $(".center-coupon-nav ul li").removeClass("center-coupon-nav-active");
+        $(this).addClass("center-coupon-nav-active");
+    })
+
+
+    //
+    // 分页
+    var onPagechange = function(page){
+        console.log('当前点击页码',page);
+    }
+    var obj = {
+        wrapid:'collection-pagination', //页面显示分页器容器id
+        total:18891,//总条数
+        pagesize:10,//每页显示10条
+        currentPage:1,//当前页
+        onPagechange:onPagechange,
+        //btnCount:7 页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
+    }
+    pagination.init(obj);
+
+    // 加入购物车鼠标移入移出
+    $(".ccl-shopcart").hover(function () {
+        $(this).attr("src",'/images/center-collection-icon-2.png');
+    },function () {
+        $(this).attr("src",'/images/center-collection-icon-1.png');
+    })
+</script>

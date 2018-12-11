@@ -94,6 +94,7 @@
                                 <td>
                                     <p class="crl-body-btn"><a href="/center/evaluate">评价</a></p>
                                     <p>再次购买</p>
+                                    <p class="center-after-sale">申请售后</p>
                                     <p class="center-invoice" data-id="1">开发票</p>
                                 </td>
                             </tr>
@@ -124,8 +125,9 @@
                                     <p>订单详情</p>
                                 </td>
                                 <td>
-                                    <p class="crl-body-btn">评价</p>
-                                    <p>再次购买</p>
+                                    <p class="crl-body-btn">立即付款</p>
+                                    <p class="crl-body-cancel">取消订单</p>
+                                    <p>开发票</p>
                                 </td>
                             </tr>
                         </table>
@@ -253,6 +255,8 @@
     </div>
 </div>
 
+
+
 <%include ../layouts/footer.ejs %>
 <script>
 
@@ -312,5 +316,75 @@
         }else{
 
         }
+    })
+    // 取消订单
+    var centerHtmlCancel = '<div class="centerHtmlCancel">\n' +
+        '    <p style="font-size: 20px !important;text-align: center !important;color:#000 !important;">你确定取消订单吗？</p>\n' +
+        '</div>';
+    $(".crl-body-cancel").click(function () {
+        $.myConfirm({title:'取消订单',message:centerHtmlCancel,btn:'是',cannelbtn:'否',hasBtn:true,bgColor:'#000',callback:function(){
+            alert('callback');
+            var html = '<div class="center-cannel-pop">\n' +
+                '    <img src="/images/center-cannel-1.png">\n' +
+                '    <p>取消成功!</p>\n' +
+                '</div>';
+            setTimeout(function () {
+                $.myAlert({title:'取消订单', btn:' ',message:html,bgColor:'#000',});
+                setTimeout(function () {
+                    $.removeModa();
+                },3000)
+            },500)
+
+
+        }})
+    })
+    
+    // 申请售后
+    $(".center-after-sale").click(function () {
+        var html = '<div class="center-after-sale">\n' +
+            '    <p>选择售后类型</p>\n' +
+            '    <div class="cf cas-box">\n' +
+            '        <div class="fl cas-box-1-active">退款</div>\n' +
+            '        <div class="fl"><p>技术</p><p>支持</p></div>\n' +
+            '    </div>\n' +
+            '    <p>退款说明</p>\n' +
+            '    <div class="cas-box-2">\n' +
+            '        <textarea name="" id="" cols="30" rows="10"></textarea>\n' +
+            '        <p> <span class="cas-box-span-1">0</span>/200</p>\n' +
+            '    </div>\n' +
+            '</div>';
+        $.myAlert({title:'申请售后', btn:'提交',message:html,bgColor:'#000',callback:function(){
+                $.removeModa();
+
+                setTimeout(function () {
+                    var html = '<div class="center-cannel-pop">\n' +
+                        '    <img src="/images/center-cannel-1.png">\n' +
+                        '    <p>提交成功!</p>\n' +
+                        '</div>';
+                    setTimeout(function () {
+                        $.myAlert({title:'取消订单', btn:' ',message:html,bgColor:'#000',});
+                        setTimeout(function () {
+                            $.removeModa();
+                        },3000)
+                    },300)
+                },300)
+
+        }});
+    })
+
+
+
+    // textarea字数限制
+    $(document).on("input propertychange",".cas-box-2 textarea",function (e) {
+        if(($(this).val()).length>=200){
+            $(this).val($(this).val().substring(0, 200));
+        }
+        $(".cas-box-span-1").text(($(this).val()).length);
+        console.log(($(this).val()).length);
+    })
+
+    // 技术支持 退款 按钮切换
+    $(document).on("click",".cas-box div",function () {
+        $(this).addClass("cas-box-1-active").siblings().removeClass("cas-box-1-active");
     })
 </script>

@@ -1,28 +1,13 @@
 <%include ../layouts/header.ejs %>
 <div class="content">
     <%include ../layouts/search.ejs %>
-    <div class="index-content">
-        <div class="index-nav w1200 po-re">
-            <ul class="cf">
-                <li>
-                    <img src="/images/index_content_1.png">
-                    全部商品分类
-                </li>
-                <li><a href="#">首页</a></li>
-                <li><a href="#">企业服务</a></li>
-                <li><a href="#">办公装横</a></li>
-                <li><a href="#">物流服务</a></li>
-                <li><a href="#">设备共享</a></li>
-            </ul>
-        </div>
-    </div>
     <div>
         <%include ../layouts/classify.ejs %>
         <div class="cart w1200">
             <table>
                 <thead>
                     <tr>
-                        <th><i class="check-box"></i>全选</th>
+                        <th><i class="check-box cart-checkbox-all" data-check="0"></i>全选</th>
                         <th>商品信息</th>
                         <th>单价</th>
                         <th>数量</th>
@@ -34,7 +19,7 @@
 
                 <tbody>
                     <tr>
-                        <td><i class="check-box"></i></td>
+                        <td><i class="check-box"  data-check="0"></i></td>
                         <td class="cf">
                             <div class="fl">
                                 <img src="http://placehold.it/70x70">
@@ -49,12 +34,12 @@
                         <td>开张大促，60桶送10</td>
                         <td>
                             <p class="cart-text-del"><span>￥720</span></p>
-                            <p class="fs18">￥650</p>
+                            <p class="fs18">￥ <span class="check-box-price">650</span></p>
                         </td>
-                        <td><img src="/images/cart-del.png"></td>
+                        <td class="cart-del-td"><img src="/images/cart-del.png"></td>
                     </tr>
                     <tr>
-                        <td><i class="check-box"></i></td>
+                        <td><i class="check-box"  data-check="0"></i></td>
                         <td class="cf">
                             <div class="fl">
                                 <img src="http://placehold.it/70x70">
@@ -69,12 +54,12 @@
                         <td>开张大促，60桶送10</td>
                         <td>
                             <p class="cart-text-del"><span>￥720</span></p>
-                            <p class="fs18">￥650</p>
+                            <p class="fs18">￥ <span class="check-box-price">650</span></p>
                         </td>
-                        <td><img src="/images/cart-del.png"></td>
+                        <td class="cart-del-td"><img src="/images/cart-del.png"></td>
                     </tr>
                     <tr>
-                        <td><i class="check-box"></i></td>
+                        <td><i class="check-box"  data-check="0"></i></td>
                         <td class="cf">
                             <div class="fl">
                                 <img src="http://placehold.it/70x70">
@@ -89,19 +74,19 @@
                         <td>开张大促，60桶送10</td>
                         <td>
                             <p class="cart-text-del"><span>￥720</span></p>
-                            <p class="fs18">￥650</p>
+                            <p class="fs18">￥<span class="check-box-price">650</span></p>
                         </td>
-                        <td><img src="/images/cart-del.png"></td>
+                        <td class="cart-del-td"><img src="/images/cart-del.png"></td>
                     </tr>
                 </tbody>
             </table>
         </div>
         <div class="cart-footer w1200 cf">
-            <i class="check-box"></i>
+            <i class="check-box cart-checkbox-all" data-check="0"></i>
             <span>全选</span>
-            <span class="cart-todel">删除选中商品</span>
+            <span class="cart-todel cart-del-all cur">删除选中商品</span>
             <div class="fr cart-topay">去结算</div>
-            <div class="fr">合计: <span class="c-red">￥5000</span></div>
+            <div class="fr">合计: <span class="c-red">￥ <span class=" topay-totalPrice">0</span></span></div>
         </div>
     </div>
 
@@ -113,7 +98,105 @@
     <div style="height: 20px; background-color: #fff"></div>
 </div>
 <script>
+    // 跳转结算页面
+    $(".cart-topay").click(function () {
+        if( parseInt($(".topay-totalPrice").html())<=0){
+            var html = '<p style="text-align: center;font-size: 20px;color:#000">至少选一个商品信息</p>';
+            $.myAlert({title:'地址信息',message:html,btn:" ",callback:function(){
+                    setTimeout(function () {
+                        $.removeModa();
+                    },3000)
+                }});
+        }else{
+            window.location.href = '/cart/pay';
+        }
 
+    })
+    // 全选
+    $(".cart-checkbox-all").click(function () {
+        if($(this).attr("data-check") == 0){
+            $(".check-box").css({"background-color": "#da251d"});
+            $(".check-box").attr("data-check",'1');
+        }else{
+            $(".check-box").css({"background-color": "#fff"});
+            $(".check-box").attr("data-check",'0');
+        }
+
+        cartTotalPrice();
+    })
+
+    // 单选
+    $(".check-box").click(function () {
+        if($(this).attr("data-check") == 0){
+            $(this).css({"background-color": "#da251d"});
+            $(this).attr("data-check",'1');
+        }else{
+            $(this).css({"background-color": "#fff"});
+            $(this).attr("data-check",'0');
+        }
+
+        cartTotalPrice();
+        isAllChecked();
+    })
+    //判断是否全选
+    function isAllChecked() {
+        var totalChecks = 0;
+        var trLength = $(".cart tbody tr").length;
+        for(var i=0;i<trLength;i++){
+            if($(".cart tbody tr").eq(i).find(".check-box").attr("data-check")==1){
+                totalChecks++;
+            }
+        }
+        if(totalChecks >= trLength){
+            $(".cart-checkbox-all").css({"background-color": "#da251d"});
+            $(".cart-checkbox-all").attr("data-check",'1');
+        }else{
+            $(".cart-checkbox-all").css({"background-color": "#ffff"});
+            $(".cart-checkbox-all").attr("data-check",'0');
+        }
+    }
+    // 金额计算
+    function cartTotalPrice() {
+        var totalPrice = 0;
+        var trLength = $(".cart tbody tr").length;
+        for(var i=0;i<trLength;i++){
+            if($(".cart tbody tr").eq(i).find(".check-box").attr("data-check")==1){
+                totalPrice += parseInt($(".cart tbody tr").eq(i).find(".check-box-price").text());
+            }
+        }
+        $(".topay-totalPrice").html(totalPrice);
+
+    }
+
+    // 删除订单
+    $(".cart-del-td").click(function () {
+        var html = '<p style="text-align: center;font-size: 20px;color:#000">订单删除成功</p>';
+        $.myAlert({title:'删除订单',message:html,btn:" ",callback:function(){
+                setTimeout(function () {
+                    $.removeModa();
+                },3000)
+            }});
+    })
+
+    // 删除全部商品
+    $(".cart-del-all").click(function () {
+        if(parseInt($(".topay-totalPrice").html())>0){
+            var html = '<p style="text-align: center;font-size: 20px;color:#000">订单所有删除成功</p>';
+            $.myAlert({title:' 删除所有商品',message:html,btn:" ",callback:function(){
+                setTimeout(function () {
+                    $.removeModa();
+                },3000)
+            }});
+        }else{
+            var html = '<p style="text-align: center;font-size: 20px;color:#000">至少选择一个删除商品</p>';
+            $.myAlert({title:' 删除所有商品',message:html,btn:" ",callback:function(){
+                setTimeout(function () {
+                    $.removeModa();
+                },3000)
+            }});
+        }
+
+    })
 
 </script>
 <%include ../layouts/footer.ejs %>

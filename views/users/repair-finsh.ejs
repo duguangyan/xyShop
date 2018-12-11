@@ -1,0 +1,56 @@
+<%include ../layouts/header.ejs %>
+<div class="login">
+    <div class="w1200">
+        <div class="login-logo">
+            <img src="/images/logo.png">
+        </div>
+    </div>
+    <div class="register-finsh repair-password">
+        <div class="w1200">
+            <div class="register-finsh-top">
+                <span class="register-finsh-span1">1</span> <span class="register-finsh-text">填写账号其他信息</span>
+                <span class="login-arrow-right"><img src="/images/login-arrow-right.png"></span>
+                <span class="register-finsh-span2">2</span> <span class="register-finsh-text">补全账号其他信息</span>
+                <span class="login-arrow-right"><img src="/images/login-arrow-right.png"></span>
+                <span class="register-finsh-span3">3</span><span class="register-finsh-text">完成</span>
+            </div>
+        </div>
+
+        <div class="w1200 repair-password-box">
+            <div>
+                <img src="/images/login-phone.png"><input type="text" placeholder="请输入手机号">
+            </div>
+            <div style="position: relative">
+                <img class="mgt-5" src="/images/repair-password-icon-3.png"><input type="text" placeholder="请输入手机验证码">
+                <span class="send-phone-code">点击发送验证码</span>
+            </div>
+        </div>
+
+        <div class="red-btn repair-password-next">下一步</div>
+
+    </div>
+</div>
+
+<%include ../layouts/footer.ejs %>
+<script>
+    // 点击发送短信
+    $(".send-phone-code").click(function () {
+        $.myToast('短信发送成功');
+        sendPhoneCode();
+    })
+
+    // 发送短信
+    function sendPhoneCode() {
+        var n = 60;
+        var timer = setInterval(function () {
+            if(n<=0){
+                clearInterval(timer);
+                $(".send-phone-code").removeClass("send-phone-active").html("点击发送验证码").css({"pointer-events": "auto"});;
+            }else{
+                n--;
+                $(".send-phone-code").addClass("send-phone-active").html( n + " S").css({"pointer-events": "none"});
+            }
+        },1000)
+
+    }
+</script>

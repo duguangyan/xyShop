@@ -1206,6 +1206,7 @@ body{
     width: 150px;
     text-align: center;
     margin-left: 50px;
+    cursor: pointer;
 }
 .cart-todel{
     margin-left: 30px;
@@ -1610,6 +1611,9 @@ body{
     border: 1px solid #eee;
     margin-top: 15px;
     padding-left: 30px;
+}
+.crl-body-cancel{
+    cursor: pointer;
 }
 .crl-body-title span{
     margin-right: 50px;
@@ -2382,3 +2386,406 @@ body{
     display: none;
 }
 /*个人中心评价列表 end*/
+
+/*个人中心收货地址 start*/
+.center-address h5{
+    height: 50px;
+    line-height: 50px;
+    padding-left: 30px;
+    font-size: 18px;
+    background-color: #f1f1f1;
+    color: #da251d;
+    font-weight: 100;
+}
+.center-address-content{
+    margin-bottom: 50px;
+}
+.center-address-content ul li{
+    width: 260px;
+    height: 170px;
+    border: 1px solid #e2e2e2;
+    float: left;
+    margin: 30px 30px 0px 30px;
+}
+.cac-p-1{
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    border-bottom: 1px solid #e2e2e2;
+    padding: 0 15px;
+}
+.cac-set-defult:hover{
+    color: #da251d;
+    cursor: pointer;
+}
+.cac-p-2{
+    height: 100px;
+    padding: 0 15px;
+    margin-top: 10px;
+    border-bottom: 1px solid #e2e2e2;
+    overflow-y: auto;
+}
+.cac-p-3{
+    height: 30px;
+    line-height: 30px;
+    padding: 0 15px;
+}
+.cac-span-edit{
+    margin-right: 20px;
+    cursor: pointer;
+}
+.cac-span-del{
+    cursor: pointer;
+}
+.cac-create-title{
+    margin: 30px;
+}
+.cac-create-title img{
+    margin-right: 10px;
+    position: relative;
+    top: 3px;
+}
+.cac-create-title span{
+    font-size: 20px;
+    color: #da251d;
+}
+.cac-create-content{
+    margin: 30px 100px;
+}
+.cac-create-content>div{
+    margin: 30px 0;
+}
+.cac-craete-box span{
+    display: inline-block;
+}
+.cac-craete-box span:first-child{
+    width: 80px;
+    text-align: right;
+    margin-right: 30px;
+}
+.cac-craete-box span:last-child{
+    width: 500px;
+    text-align: left;
+}
+#distpicker{
+    width: 500px;
+    float: left;
+}
+.cac-craete-box input{
+    width: 230px;
+    height: 30px;
+    border: 1px solid #e2e2e2;
+    padding-left: 5px;
+}
+.cac-craete-box input:hover{
+    border: 1px solid #da251d;
+}
+.cac-craete-box select{
+    width: 134px;
+    height: 30px;
+    border: 1px solid #e2e2e2;
+    padding-left: 5px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+.cac-craete-box-4 input:first-child{
+    width: 80px;
+    margin-right: 30px;
+}
+.cac-craete-box-4 input:last-child{
+    width: 346px;
+}
+.cac-create-btn{
+    margin-bottom: 50px;
+}
+.cac-create-btn .red-btn{
+    position: relative;
+    left: -197px;
+
+}
+/*个人中心收货地址 end*/
+
+/*个人中心商品收藏 start*/
+.center-collection h5{
+    text-align: center;
+    width: 124px;
+    font-size: 20px;
+    line-height: 50px;
+    height: 50px;
+    background-color: #da251d;
+    color: #fff;
+}
+.center-collection{
+    width: 970px;
+    overflow: hidden;
+}
+.center-collection ul{
+    padding: 45px 0 0 45px;
+    width: 120%;
+}
+.center-collection ul li{
+    width: 241px;
+    height: 310px;
+    border: 1px solid #e2e2e2;
+    float: left;
+    margin-bottom: 45px;
+    margin-right: 78px;
+}
+.ccl-box{
+    padding: 0 10px;
+}
+.ccl-box .fr{
+    position: relative;
+    top: -5px;
+    cursor: pointer;
+}
+.center-cannel-pop{
+    text-align: center;
+
+}
+.center-cannel-pop p{
+    font-size: 20px !important;
+    color: #000 !important;
+}
+.center-after-sale{
+    cursor: pointer;
+}
+.center-after-sale>p{
+    font-size: 20px !important;
+    color: #000 !important;
+}
+.cas-box>div{
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    background-color: #fef4ea;
+    color: #808080;
+    font-size: 16px;
+    border: 1px solid #da251d;
+    margin: 0 50px ;
+    border-radius: 5px;
+}
+/*.cas-box>div:hover{*/
+    /*background-color: #fef4ea !important;*/
+    /*color: #000 !important;*/
+    /*border: 1px solid #da251d !important;*/
+/*}*/
+/*.cas-box>div:hover p{*/
+    /*color: #000 !important;*/
+/*}*/
+.cas-box>div p{
+    line-height: 6px !important;
+    padding: 10px 0 !important;
+    margin-top: 6px !important;
+}
+
+.cas-box-2{
+    margin-left: 50px;
+    position: relative;
+}
+.cas-box-2 textarea{
+    width: 400px;
+    padding: 5px;
+    height: 100px;
+    margin-left: 50px;
+    border: 1px solid #e2e2e2;
+}
+.cas-box-2 p{
+    position: absolute;
+    bottom: 10px;
+    right: 100px;
+    padding: 0 !important;
+}
+.cas-box-1-active{
+    background-color: #da251d !important;
+    border: 1px solid #da251d !important;
+    color: #fff !important;
+}
+.cas-box-1-active p{
+    color: #fff !important;
+    background-color: #da251d;
+}
+/*个人中心商品收藏 end*/
+/*支付订单页面 start*/
+.cart-pay-content .center-address-content{
+    margin-bottom: 0 !important;
+}
+.cart-pay-content{
+    background-color: #f8f8f8;
+    padding-bottom: 100px;
+}
+.cpc-title{
+    font-size: 20px;
+    height: 80px;
+    line-height: 80px;
+}
+.cpc-title span{
+    cursor: pointer;
+}
+.cpc-span-edit{
+    margin-right: 20px;
+}
+.cpc-box h5{
+    padding: 30px 0 0 10px;
+
+}
+.cpc-box h5{
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 50px;
+    height: 50px;
+    border-bottom: 1px solid #e2e2e2;
+}
+.cpc-box ul li{
+    display: inline-block;
+    width: 170px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 20px;
+    color: #000;
+    background-color: #f1f1f1;
+    margin-left: 30px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 1px solid #e2e2e2;
+    cursor: pointer;
+}
+
+.cpc-box ul li:hover{
+    background-color: #da251d;
+    border: 1px solid #da251d;
+    color: #fff;
+}
+.cpc-box-active{
+    background-color: #da251d !important;
+    border: 1px solid #da251d !important;
+    color: #fff !important;
+}
+.cart-del-td{
+    cursor: pointer;
+}
+.cart-pay-info h5{
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    padding-left: 10px;
+    font-weight: 100;
+}
+.cart-pay-info table{
+    width: 100%;
+    padding: 0 30px;
+    text-align: left;
+}
+.cart-pay-info table thead{
+    font-size: 20px;
+    height: 60px;
+    line-height: 60px;
+    background-color: #f8f8f8;
+}
+.cart-pay-info table tbody tr{
+    border-bottom: 1px solid #e2e2e2;
+}
+.cart-pay-info table tbody tr:last-child{
+    border-bottom: none;
+}
+.cart-pay-info table th:nth-child(1){
+    width: 280px;
+}
+.cart-pay-info table tbody tr .box-70-70 {
+    margin: 40px 0;
+}
+.cpi-td-div-2 p{
+    line-height: 30px;
+}
+.cpi-td-div-2{
+    margin-top: 46px;
+    margin-left: 22px;
+}
+.cart-pay-price h5{
+    height: 50px;
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 50px;
+    padding-left: 10px;
+    border-bottom: 1px solid #e2e2e2;
+}
+.cpp-box{
+    width: 350px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.cpp-box div:last-child{
+    text-align: right;
+    padding-right: 100px;
+}
+.cpp-box p{
+    line-height: 30px;
+    height: 30px;
+}
+.cpp-pay-btn{
+    margin-top: 30px !important;
+    position: relative;
+    left: -45px;
+}
+/*支付订单 end*/
+/*修改密码 start*/
+
+.repair-password .register-finsh-span2,.repair-password .register-finsh-span3{
+    background-color: #fff;
+    border: 1px solid #da251d;
+    color: #000;
+}
+.repair-password-box{
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-left: 530px;
+}
+.repair-password-box div{
+    width: 460px;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid #e2e2e2;
+    margin-top: 60px;
+}
+.repair-password-box div img{
+    padding: 10px;
+    position: relative;
+    top: -5px;
+}
+.repair-password-box div input{
+    border-left: 1px solid #e2e2e2;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    padding-left: 10px;
+}
+.repair-password-next{
+    margin-top: 50px !important;
+    width: 460px !important;
+}
+.send-phone-active{
+    background-color: #eee !important;
+    color: #000 !important;
+}
+.send-phone-code{
+    position: absolute;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    width: 140px;
+    text-align: center;
+    background-color: #da251d;
+    color: #fff;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+
+}
+.repair-email .register-finsh-span3{
+    background-color: #fff;
+    border: 1px solid #da251d;
+    color: #000;
+}
+/*修改密码 end*/

@@ -7,7 +7,7 @@
             },100)
         }, myAlert: function (options) {
             var option = {
-                title: "标题", message: "content",btn:'确定', callback: function () {
+                title: "标题", message: "content",btn:'确定', bgColor:'#da251d', callback: function () {
                 }
             };
             if (typeof(options) == "string") {
@@ -16,7 +16,7 @@
                 option = $.extend(option, options)
             }
             var top = $(window).height() * 0.3;
-            $('body').append('<div class="myModa"><div class="myModaBg"></div><div class="myAlertBox"  style="margin-top: 3%"><h6>' + option.title + '</h6><p>' + option.message + '</p><div class="btn sure">'+option.btn+'</div></div></div>');
+            $('body').append('<div class="myModa"><div class="myModaBg"></div><div class="myAlertBox"  style="margin-top: 3%"><h6  style="background-color:'+option.bgColor+'">' + option.title + '</h6><p>' + option.message + '</p><div class="btn sure">'+option.btn+'</div></div></div>');
             if(option.btn == " "){
                 $(".myAlertBox .btn").hide();
                 option.callback();
@@ -31,7 +31,7 @@
             })
         }, myConfirm: function (options) {
             var option = {
-                title: "标题", message: "content",btn:"确定", callback: function () {
+                title: "标题", message: "content",btn:"确定",cannelbtn:'取消',bgColor:'#da251d', hasBtn:true, callback: function () {
                 }
             };
             if (typeof(options) == "string") {
@@ -40,17 +40,17 @@
                 option = $.extend(option, options)
             }
             var top = $(window).height() * 0.3;
-            $('body').append('<div class="myModa"><div class="myAlertBox" style="margin-top:' + top + 'px"><h6>' + option.title + '</h6><p>' + option.message + '</p><div class="col2"><div class="col" style="margin-right: 20px;"><div class="btn exit">鍙栨秷</div></div><div class="col"><div class="btn sure">'+option.btn+'</div></div></div></div></div>');
-            $('body').css('overflow-y', 'hidden');
+            $('body').append('<div class="myModa"><div class="myModaBg"></div><div class="myAlertBox" style="margin-top:' + top + 'px"><h6 style="background-color:'+option.bgColor+'">' + option.title + '</h6><p>' + option.message + '</p><div class="col2"><div class="col" style="margin-right: 20px;"><div class="btn sure">'+option.btn+'</div></div><div class="col"><div class="btn exit" style="background-color: #fef4ea;color: #000; border: 1px solid #e2e2e2">'+option.cannelbtn+'</div></div></div></div></div>');
             $('.btn.exit').click(function () {
                 $.removeModa();
-                $('body').css('overflow-y', 'scroll')
             });
             $('.btn.sure').click(function () {
                 $.removeModa();
-                $('body').css('overflow-y', 'scroll');
                 option.callback()
             })
+            if(!options.hasBtn){
+                $(".myModa .myAlertBox .col2").hide();
+            }
         }, myToast: function (message) {
             var top = $(window).height() * 0.3;
             $('body').append('<div class="myToast">' + message + '</div>');

@@ -18,6 +18,15 @@ router.get('/register', function(req, res, next) {
 router.get('/register-finish', function(req, res, next) {
     res.render('users/register-finish', { title: '注册完成'});
 });
+router.get('/repair-password', function(req, res, next) {
+    res.render('users/repair-password', { title: '修改密码'});
+});
+router.get('/repair-finsh', function(req, res, next) {
+    res.render('users/repair-finsh', { title: '修改密码'});
+});
+router.get('/repair-email', function(req, res, next) {
+    res.render('users/repair-email', { title: '修改密码'});
+});
 
 
 

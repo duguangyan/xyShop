@@ -26,6 +26,11 @@ router.get('/stock', function(req, res, next) {
 router.get('/coupon', function(req, res, next) {
     res.render('center/center-coupon', { title: '个人中心我的优惠券'});
 });
-
+router.get('/address', function(req, res, next) {
+    res.render('center/center-address', { title: '个人中心地址管理'});
+});
+router.get('/collection', function(req, res, next) {
+    res.render('center/center-collection', { title: '个人中心商品收藏'});
+});
 
 module.exports = router;

@@ -48,9 +48,18 @@
 $(function () {
     $('.userinfo-radio').click(function () {
         var index = $(this).attr("data-index");
-        $('.userinfo-radio').find("i").addClass("radio-box").removeClass("radio-box-active")
-        $('.userinfo-radio').find("i").eq(index).addClass("radio-box-active")
-        alert(index?"男":"女")
+        $('.userinfo-radio').find("i").addClass("radio-box").removeClass("radio-box-active");
+        $('.userinfo-radio').find("i").eq(index).addClass("radio-box-active");
+        alert(index == "0"?"男":"女")
+    })
+
+    $(".userinfo-save").click(function () {
+        var html = '<p style="text-align: center;font-size: 20px;color:#000">用户信息保存成功</p>';
+        $.myAlert({title:'用户信息',message:html,btn:" ",callback:function(){
+                setTimeout(function () {
+                    $.removeModa();
+                },3000)
+            }});
     })
 })
 </script>
