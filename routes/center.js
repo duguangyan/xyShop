@@ -32,5 +32,8 @@ router.get('/address', function(req, res, next) {
 router.get('/collection', function(req, res, next) {
     res.render('center/center-collection', { title: '个人中心商品收藏'});
 });
+router.get('/regoods', function(req, res, next) {
+    res.render('center/center-regoods', { title: '个人中心退换货'});
+});
 
 module.exports = router;

@@ -1,0 +1,98 @@
+<%include ../layouts/header.ejs %>
+<div class="content">
+    <%include ../layouts/search.ejs %>
+    <div class="center">
+        <div class="w1200 cf">
+            <div class="center-left">
+                <%include ../layouts/center-sider.ejs %>
+            </div>
+            <div class="center-right">
+                <div class="center-right-content">
+                    <div class="crc-nav">
+                        <span class="c-red">
+                            <img src="/images/center-flag.png">
+                            全部
+                        </span>
+                        <span>
+                            <img src="/images/center-flag.png">
+                            退货中
+                        </span>
+                        <span>
+                            <img src="/images/center-flag.png">
+                            已退货
+                        </span>
+                    </div>
+                </div>
+
+                <div class="center-right-list">
+                    <div class="crl-head">
+                        <table>
+                            <tr>
+                                <td>订单信息</td>
+                                <td>退款金额</td>
+                                <td>申请时间</td>
+                                <td>服务类型</td>
+                                <td>退款状态</td>
+                                <td>操作</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="crl-body crg-body">
+                        <div class="crl-body-title"><span>订单号：xxxxxxxxxxx</span> <span>2018-11-26   11:50:51</span></div>
+                        <table>
+                            <tr>
+                                <td class="cf">
+                                    <div class="box-70-70 fl">
+                                        <img src="http://placehold.it/70x70" alt="">
+                                    </div>
+                                    <span class="fl mgl-5 w200">得力7810白板檫110*48*40</span>
+                                </td>
+                                <td>￥ 10</td>
+                                <td>2018年12月19日</td>
+                                <td>退款</td>
+                                <td>已完成</td>
+                                <td>联系客服</td>
+
+                            </tr>
+                        </table>
+                    </div>
+
+
+                    <div class="crc-show-orders c-red">查看所有订单</div>
+
+                </div>
+                <div class="center-list-nodata" style="display: none;">
+                    <img src="/images/cart-nodata.png">
+                    <p>暂无任何商品，快去 <a href="#" class="c-red">选购</a>吧</p>
+                    <p class="crc-show-orders">查看所有订单</p>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<%include ../layouts/footer.ejs %>
+<script>
+
+    $(".crc-nav span").eq(0).find("img").css('opacity',1);
+    // 全部订单/待付款/待收货 nav切换
+    $(".crc-nav span").click(function () {
+        $(".crc-nav span").removeClass("c-red").eq($(this).index()).addClass("c-red");
+        $(".crc-nav span").find("img").css('opacity',0);
+        $(this).find("img").css('opacity',1);
+        // todo ajax
+    })
+    // 查看所有订单
+    $('.crc-show-orders').click(function () {
+        $(".crc-nav span").removeClass("c-red").eq(0).addClass("c-red");
+        $(".crc-nav span").find("img").css('opacity',0);
+        $(".crc-nav span").eq(0).find("img").css('opacity',1);
+        $("html,body").animate({scrollTop:300},1000);//回到顶端
+    })
+</script>

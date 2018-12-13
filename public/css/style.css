@@ -1598,8 +1598,11 @@ body{
     line-height: 30px;
     text-align: center;
 }
-.crl-head td:nth-child(1),.crl-body td:nth-child(1){
+.crl-body td:nth-child(1){
     width: 356px !important;
+}
+.crl-head td:nth-child(1){
+    width: 422px !important;
 }
 .crl-head td,.crl-body td{
     width: 150px;
@@ -2788,4 +2791,14 @@ body{
     border: 1px solid #da251d;
     color: #000;
 }
+.center-list-nodata{
+    text-align: center;
+}
+.center-list-nodata img{
+    margin-top: 40px;
+}
+.center-list-nodata p{
+    margin-top: 30px;
+}
+
 /*修改密码 end*/

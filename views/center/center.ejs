@@ -163,9 +163,15 @@
                             </tr>
                         </table>
                     </div>
-
                     <div class="crc-show-orders c-red">查看所有订单</div>
+
                 </div>
+                <div class="center-list-nodata" style="display: none;">
+                    <img src="/images/cart-nodata.png">
+                    <p>暂无任何商品，快去 <a href="#" class="c-red">选购</a>吧</p>
+                    <p class="crc-show-orders">查看所有订单</p>
+                </div>
+
 
             </div>
         </div>
@@ -271,6 +277,8 @@
     // 查看所有订单
     $('.crc-show-orders').click(function () {
         $(".crc-nav span").removeClass("c-red").eq(0).addClass("c-red");
+        $(".crc-nav span").find("img").css('opacity',0);
+        $(".crc-nav span").eq(0).find("img").css('opacity',1);
         $("html,body").animate({scrollTop:480},1000);//回到顶端
     })
     // 查看物流 显示弹窗
