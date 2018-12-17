@@ -2800,5 +2800,14 @@ body{
 .center-list-nodata p{
     margin-top: 30px;
 }
-
+.cart-input-number{
+    width: 40px;
+    text-align: center;
+}
+.cart-sub,.cart-add{
+    font-size: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    text-align: center;
+}
 /*修改密码 end*/
