@@ -29,8 +29,29 @@
                                 <p>规格 : <span>百岁山</span> <span>60 桶</span></p>
                             </div>
                         </td>
-                        <td>¥ 12</td>
-                        <td>60</td>
+                        <td>¥ <span class="cart-one-price">12</span></td>
+                        <td><span class="cart-sub">-</span> <input class="cart-input-number" type="number" value="60"><span class="cart-add">+</span></td>
+                        <td>开张大促，60桶送10</td>
+                        <td>
+                            <p class="cart-text-del"><span>￥720</span></p>
+                            <p class="fs18">￥ <span class="check-box-price">650</span></p>
+                        </td>
+                        <td class="cart-del-td"><img src="/images/cart-del.png"></td>
+                    </tr>
+
+                    <tr>
+                        <td><i class="check-box"  data-check="0"></i></td>
+                        <td class="cf">
+                            <div class="fl">
+                                <img src="http://placehold.it/70x70">
+                            </div>
+                            <div class="fl cart-carry">
+                                <p>桶装水</p>
+                                <p>规格 : <span>百岁山</span> <span>60 桶</span></p>
+                            </div>
+                        </td>
+                        <td>¥ <span class="cart-one-price">12</span></td>
+                        <td><span class="cart-sub">-</span> <input class="cart-input-number" type="number" value="60"><span class="cart-add">+</span></td>
                         <td>开张大促，60桶送10</td>
                         <td>
                             <p class="cart-text-del"><span>￥720</span></p>
@@ -49,32 +70,12 @@
                                 <p>规格 : <span>百岁山</span> <span>60 桶</span></p>
                             </div>
                         </td>
-                        <td>¥ 12</td>
-                        <td>60</td>
+                        <td>¥ <span class="cart-one-price">12</span></td>
+                        <td><span class="cart-sub">-</span> <input class="cart-input-number" type="number" value="60"><span class="cart-add">+</span></td>
                         <td>开张大促，60桶送10</td>
                         <td>
                             <p class="cart-text-del"><span>￥720</span></p>
                             <p class="fs18">￥ <span class="check-box-price">650</span></p>
-                        </td>
-                        <td class="cart-del-td"><img src="/images/cart-del.png"></td>
-                    </tr>
-                    <tr>
-                        <td><i class="check-box"  data-check="0"></i></td>
-                        <td class="cf">
-                            <div class="fl">
-                                <img src="http://placehold.it/70x70">
-                            </div>
-                            <div class="fl cart-carry">
-                                <p>桶装水</p>
-                                <p>规格 : <span>百岁山</span> <span>60 桶</span></p>
-                            </div>
-                        </td>
-                        <td>¥ 12</td>
-                        <td>60</td>
-                        <td>开张大促，60桶送10</td>
-                        <td>
-                            <p class="cart-text-del"><span>￥720</span></p>
-                            <p class="fs18">￥<span class="check-box-price">650</span></p>
                         </td>
                         <td class="cart-del-td"><img src="/images/cart-del.png"></td>
                     </tr>
@@ -86,7 +87,7 @@
             <span>全选</span>
             <span class="cart-todel cart-del-all cur">删除选中商品</span>
             <div class="fr cart-topay">去结算</div>
-            <div class="fr">合计: <span class="c-red">￥ <span class=" topay-totalPrice">0</span></span></div>
+            <div class="fr">合计: <span class="c-red">￥ <span class="topay-totalPrice">0</span></span></div>
         </div>
     </div>
 
@@ -198,5 +199,50 @@
 
     })
 
+    // 购物车减数量
+    $(".cart-sub").click(function () {
+        var val = $(this).siblings("input").val();
+        val--;
+        if(val<=1){
+            val = 1
+        }else if(val>=9999){
+            val = 9999
+        }
+        $(this).siblings("input").val(val);
+        var cartOnePrice = parseInt($(this).parents("tr").find(".cart-one-price").html());
+        var cartInputNumber = parseInt($(this).parents("tr").find(".cart-input-number").val());
+        $(this).parents("tr").find(".check-box-price").html(cartOnePrice*cartInputNumber);
+
+        cartTotalPrice();
+
+    })
+    // 购物车加数量
+    $(".cart-add").click(function () {
+        var val = $(this).siblings("input").val();
+        val++;
+        if(val<=1){
+            val = 1
+        }else if(val>=9999){
+            val = 9999
+        }
+        $(this).siblings("input").val(val);
+        var cartOnePrice = parseInt($(this).parents("tr").find(".cart-one-price").html());
+        var cartInputNumber = parseInt($(this).parents("tr").find(".cart-input-number").val());
+        $(this).parents("tr").find(".check-box-price").html(cartOnePrice*cartInputNumber);
+
+        cartTotalPrice();
+    })
+    // 直接输入
+
+    $('.cart-input-number').bind('input propertychange', function() {
+        if($(this).val()=="" ||$(this).val()== 0){
+            $(this).val(1);
+        }
+        var cartOnePrice = parseInt($(this).parents("tr").find(".cart-one-price").html());
+        var cartInputNumber = parseInt($(this).parents("tr").find(".cart-input-number").val());
+        $(this).parents("tr").find(".check-box-price").html(cartOnePrice*cartInputNumber);
+
+        cartTotalPrice();
+    });
 </script>
 <%include ../layouts/footer.ejs %>
