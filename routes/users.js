@@ -61,7 +61,8 @@ router.get('/qq_login', function (req, res, next) {
     res.redirect(authorization);
 });
 router.get('/qqLogin', function (req, res, next) {
-    res.render('users/login', { title: '登录'});
+    res.json(JSON.stringify({data: req.query.code}))
+    //res.render('users/login', { title: '登录'});
     //拿到code
     // var code = req.query.code;
     // //获取token
