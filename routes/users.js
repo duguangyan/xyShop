@@ -61,37 +61,38 @@ router.get('/qq_login', function (req, res, next) {
     res.redirect(authorization);
 });
 router.get('/qqLogin', function (req, res, next) {
+    res.render('users/login', { title: '登录'});
     //拿到code
-    var code = req.query.code;
-    //获取token
-    var getTokenUrl = 'https://graph.qq.com/oauth2.0/token?grant_type=authorization_code&client_id='+qqAppID+'&client_secret='+qqAppkey+'&code='+code+'&redirect_uri='+qqRedirect_uri;
-    // res.send(getTokenUrl);
-    request.get({url:getTokenUrl},function (err, httpResponse, body) {
-        var str = body;
-        var access_token = str.split('=')[1].split('&')[0];
-        //获取用户openid
-        var getMeUrl = 'https://graph.qq.com/oauth2.0/me?access_token=' + access_token;
-        request.get({url:getMeUrl}, function (err, httpResponse, body) {
-            //QQ返回的是字符串，不是json，也不能直接转json，日了狗
-            var str = body;
-            var jsonStr = str.replace('callback( ','');
-            jsonStr = jsonStr.replace(' );','');
-            jsonStr = JSON.parse(jsonStr);
-            var qqOpenid = jsonStr['openid'];
-            var qqClient_id = jsonStr['client_id'];
-            //拿到两个参数以后去获取用户资料
-            request.get({url:'https://graph.qq.com/user/get_user_info?access_token='+ urlencode(access_token) +'&oauth_consumer_key='+ urlencode(qqAppID) + '&openid=' + urlencode(qqOpenid)}, function (err, httpResponse, body) {
-                body = JSON.parse(body);
-                res.json(JSON.stringify({data: body}))
-                /*res.send("\
-                    <h1>QQ昵称："+ body.nickname +"openid:"+ qqOpenid +"</h1>\
-                    <p>![]("+body.figureurl_qq_1+")</p>\
-                    <p>性别："+ body.gender+"</p>\
-                    <p>地区："+body.province +","+ body.city+"</p>\
-                ");*/
-            })
-        })
-    })
+    // var code = req.query.code;
+    // //获取token
+    // var getTokenUrl = 'https://graph.qq.com/oauth2.0/token?grant_type=authorization_code&client_id='+qqAppID+'&client_secret='+qqAppkey+'&code='+code+'&redirect_uri='+qqRedirect_uri;
+    // // res.send(getTokenUrl);
+    // request.get({url:getTokenUrl},function (err, httpResponse, body) {
+    //     var str = body;
+    //     var access_token = str.split('=')[1].split('&')[0];
+    //     //获取用户openid
+    //     var getMeUrl = 'https://graph.qq.com/oauth2.0/me?access_token=' + access_token;
+    //     request.get({url:getMeUrl}, function (err, httpResponse, body) {
+    //         //QQ返回的是字符串，不是json，也不能直接转json，日了狗
+    //         var str = body;
+    //         var jsonStr = str.replace('callback( ','');
+    //         jsonStr = jsonStr.replace(' );','');
+    //         jsonStr = JSON.parse(jsonStr);
+    //         var qqOpenid = jsonStr['openid'];
+    //         var qqClient_id = jsonStr['client_id'];
+    //         //拿到两个参数以后去获取用户资料
+    //         request.get({url:'https://graph.qq.com/user/get_user_info?access_token='+ urlencode(access_token) +'&oauth_consumer_key='+ urlencode(qqAppID) + '&openid=' + urlencode(qqOpenid)}, function (err, httpResponse, body) {
+    //             body = JSON.parse(body);
+    //             res.json(JSON.stringify({data: body}))
+    //             /*res.send("\
+    //                 <h1>QQ昵称："+ body.nickname +"openid:"+ qqOpenid +"</h1>\
+    //                 <p>![]("+body.figureurl_qq_1+")</p>\
+    //                 <p>性别："+ body.gender+"</p>\
+    //                 <p>地区："+body.province +","+ body.city+"</p>\
+    //             ");*/
+    //         })
+    //     })
+    // })
 
 });
 
