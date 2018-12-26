@@ -82,7 +82,7 @@ router.get('/qqLogin', function (req, res, next) {
             //拿到两个参数以后去获取用户资料
             request({url:'https://graph.qq.com/user/get_user_info?access_token='+ access_token +'&oauth_consumer_key='+ qqAppID + '&openid=' + qqOpenid}, function (err, httpResponse, body) {
                 body = JSON.parse(body);
-                res.json(JSON.stringify({data: body}))
+                res.json({data: body})
                 /*res.send("\
                     <h1>QQ昵称："+ body.nickname +"openid:"+ qqOpenid +"</h1>\
                     <p>![]("+body.figureurl_qq_1+")</p>\
