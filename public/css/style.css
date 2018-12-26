@@ -2810,4 +2810,65 @@ body{
     cursor: pointer;
     text-align: center;
 }
+.right-sider{
+    width: 40px;
+    height: 100%;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99999;
+}
+.right-sider div{
+    margin-top: 200px;
+}
+.right-sider div ul li{
+    text-align: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    height: 40px;
+    position: relative;
+}
+.right-sider div ul li:hover{
+    background-color: #da251d;
+}
+.right-sider div ul li:hover span{
+    display: block !important;
+    left: -20px;
+    transition: all .5s linear;
+}
+.triangle-border-right{
+    width:0;
+    height:0;
+    border-width:20px 20px 20px 0;
+    border-style:solid;
+    border-color:transparent #da251d transparent transparent;/*透明 灰 透明 透明 */
+    margin:40px auto;
+    position:relative;
+}
+.right-sider div ul li span{
+    position: absolute;
+    top: -39px;
+    left: 0px;
+    display: none !important;
+    transition: all .5s linear;
+}
+.right-sider div ul li span:first-child{
+    display: inline-block;
+    width: 100px;
+    background-color: #303030;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    left: -120px;
+    top: 1px;
+    padding-right: 20px;
+}
+.right-sider div ul li img{
+    position: relative;
+    top: 10px;
+}
+.right-sider div ul li:first-child img{
+    top: 6px;
+}
 /*修改密码 end*/
