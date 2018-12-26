@@ -61,7 +61,13 @@ router.get('/qq_login', function (req, res, next) {
     res.redirect(authorization);
 });
 router.get('/qqLogin', function (req, res, next) {
-    res.json(JSON.stringify({data: req.query.code}))
+    res.json({data: req.query})
+    //var token = req.query.code;
+    //var url = 'https://graph.qq.com/user/get_user_info?access_token='+token+'&oauth_consumer_key=101137684&openid=333333333333333333333333333';
+
+
+
+
     //res.render('users/login', { title: '登录'});
     //拿到code
     // var code = req.query.code;
