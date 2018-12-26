@@ -98,14 +98,14 @@ router.get('/qqLogin', function (req, res, next) {
 
 // 微信登录
 /* 微信授权登录参数  这个不可以复制 */
-var AppID = '微信公众号APPID（测试、正式号都可以）';
-var AppSecret = 'appsecret';
+var AppID = 'wx40dd1ed6ab6087b2';
+var AppSecret = '72b100ff382096164dd64bc058a0c7a5';
 
 router.get('/wechat_login', function(req,res, next){
     // 第一步：用户同意授权，获取code
     var router = 'get_wx_access_token';
     // 这是编码后的地址
-    var return_uri = 'http%3A%2F%2Fwww.yhorizon.com%2F'+router;
+    var return_uri = 'http://nd.du-u.top/users'+router;
     var scope = 'snsapi_userinfo';
     res.redirect('https://open.weixin.qq.com/connect/oauth2/authorize?appid='+AppID+'&redirect_uri='+return_uri+'&response_type=code&scope='+scope+'&state=STATE#wechat_redirect');
 
@@ -133,15 +133,16 @@ router.get('/get_wx_access_token', function(req,res, next) {
                         if (response.statusCode == 200) {
                             // 第四步：根据获取的用户信息进行对应操作
                             var userinfo = JSON.parse(body);
-                            console.log('获取微信信息成功！');
-                            //其实，到这就写完了，你应该拿到微信信息以后去干该干的事情，比如对比数据库该用户有没有关联过你们的数据库，如果没有就让用户关联....等等等...
-                            // 小测试，实际应用中，可以由此创建一个帐户
-                            res.send("\
-                                <h1>" + userinfo.nickname + " 的个人信息</h1>\
-                                <p><img src='" + userinfo.headimgurl + "' /></p>\
-                                <p>" + userinfo.city + "，" + userinfo.province + "，" + userinfo.country + "</p>\
-                                <p>openid: " + userinfo.openid + "</p>\
-                            ");
+                            res.json({data: userinfo})
+                            // console.log('获取微信信息成功！');
+                            // //其实，到这就写完了，你应该拿到微信信息以后去干该干的事情，比如对比数据库该用户有没有关联过你们的数据库，如果没有就让用户关联....等等等...
+                            // // 小测试，实际应用中，可以由此创建一个帐户
+                            // res.send("\
+                            //     <h1>" + userinfo.nickname + " 的个人信息</h1>\
+                            //     <p><img src='" + userinfo.headimgurl + "' /></p>\
+                            //     <p>" + userinfo.city + "，" + userinfo.province + "，" + userinfo.country + "</p>\
+                            //     <p>openid: " + userinfo.openid + "</p>\
+                            // ");
                         } else {
                             console.log(response.statusCode);
                         }
