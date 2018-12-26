@@ -55,12 +55,12 @@ router.get('/repair-email', function(req, res, next) {
 // QQ登录
 var qqAppID = '101538056';
 var qqAppkey = 'c17b8b9734052b73032eb3a6091b8200';
-var qqRedirect_uri = 'http://nd.du-u.top/users/qq/login';
-router.get('/qqLogin', function (req, res, next) {
+var qqRedirect_uri = 'http://nd.du-u.top/users/qqLogin';
+router.get('/qq_login', function (req, res, next) {
     var authorization = 'https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id='+qqAppID+'&redirect_uri='+qqRedirect_uri+'&state=233&scope=get_user_info,get_vip_info,get_vip_rich_info';
     res.redirect(authorization);
 });
-router.get('/qq/login', function (req, res, next) {
+router.get('/qqLogin', function (req, res, next) {
     //拿到code
     var code = req.query.code;
     //获取token
