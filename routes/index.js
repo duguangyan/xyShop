@@ -97,6 +97,7 @@ router.get('/wx', function(req, res, next) {
         // console.log(jsapi_ticket)
         jsapi_ticket = getSha1(jsapi_ticket);
         return {
+            appId:"wxf7a4c10a689f5ad1",
             noncestr: noncestr,
             timestamp: timestamp,
             signature: jsapi_ticket
