@@ -93,7 +93,7 @@ router.get('/wx', function(req, res, next) {
             .toString(36)
             .substr(2); // 随机字符串
         let timestamp = createTimestamp(); // 获取时间戳，数值类型
-        let jsapi_ticket = `jsapi_ticket=${key}&noncestr=${noncestr}&timestamp=${timestamp}&url=${nowUrl}`;
+        let jsapi_ticket = `jsapi_ticket=${key}&noncestr=${noncestr}&timestamp=${timestamp}&url=http://www.yidap.com`;
         // console.log(jsapi_ticket)
         jsapi_ticket = getSha1(jsapi_ticket);
         return {
